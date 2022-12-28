@@ -10,6 +10,7 @@ import {
     Button
 } from "@chakra-ui/react";
 import { useState } from "react";
+import { theme } from "../styles/theme";
 
 interface headerProps {
     headerTitle: string;
@@ -38,8 +39,8 @@ export default function Header({ headerTitle }: headerProps) {
                 {menuOpen ? (
                     <Fade in={menuOpen}>
                         <List
-                            backgroundColor="#000000"
-                            color="#ffffff"
+                            backgroundColor={theme.colors.black}
+                            color={theme.colors.white}
                             zIndex={99}
                             borderRadius=".2rem"
                             transition="ease-in"
@@ -50,7 +51,7 @@ export default function Header({ headerTitle }: headerProps) {
                             <ListItem px={5} py={2} whiteSpace="nowrap">
                                 <Link>Add Workout</Link>
                             </ListItem>
-                            <ListItem px={5} py={2} borderTop="1px solid #ffffff">
+                            <ListItem px={5} py={2} borderTop={`1px solid ${theme.colors.white}`}>
                                 <Link>Add Meal</Link>
                             </ListItem>
                         </List>

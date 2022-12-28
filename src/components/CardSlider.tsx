@@ -1,4 +1,5 @@
 import { Box, Heading, Flex, Link } from "@chakra-ui/react";
+import { theme } from '../styles/theme'
 import { ReactNode } from "react";
 
 interface CardSectionProps {
@@ -26,17 +27,18 @@ export default function CardSlider({
           </Heading>
           <Link
             href={cardSectionLink}
-            backgroundColor="#000000"
-            color="#ffffff"
-            border="1px solid #000000"
+            backgroundColor={theme.colors.black}
+            color={theme.colors.white}
+            border={`1px solid ${theme.colors.black}`}
             borderRadius="2rem"
             px="1.5rem"
             py=".2rem"
             _hover={{
               textDecor: "none",
-              color: "#000000",
+              color: theme.colors.black,
               backgroundColor: "transparent",
-              border: "1px solid #000000",
+              border: "1px solid",
+              borderColor: theme.colors.black
             }}
           >
             View All

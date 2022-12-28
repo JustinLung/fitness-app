@@ -1,4 +1,5 @@
 import { Card, CardBody, Text, Image, Heading, Link, Flex } from "@chakra-ui/react";
+import { theme } from '../styles/theme'
 
 interface ExerciseProps {
     cardName: string;
@@ -17,7 +18,7 @@ export default function FitCard({
 }: ExerciseProps) {
     return (
         <Link href={cardLink} textDecor="none" _hover={{ textDecor: "none" }}>
-            <Card as="article" scrollSnapAlign="center" w="90vw" >
+            <Card as="article" scrollSnapAlign="center" w="90vw" bg={theme.colors.white} color={theme.colors.black}>
                 <Image src={cardImage} borderRadius=".2rem" />
                 <CardBody>
                     <Heading as="h3" size="md">{cardName}</Heading>

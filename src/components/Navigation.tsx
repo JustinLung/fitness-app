@@ -1,4 +1,5 @@
 import { Container, List, ListItem, Image, Link } from "@chakra-ui/react";
+import { theme } from '../styles/theme'
 
 export default function Navigation() {
   return (
@@ -11,7 +12,7 @@ export default function Navigation() {
       p="0.7em 0"
       pb="2em"
       borderRadius=".5em"
-      backgroundColor="#ffffff"
+      backgroundColor={theme.colors.white}
     >
       <List display="flex" justifyContent="space-around" mx="auto">
         <ListItem>
