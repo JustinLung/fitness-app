@@ -10,10 +10,10 @@ export const workoutsQuery = `query Assets {
 
 export const mealsQuery = `query Assets {
       meals {
-    mealImage {
-      url
-    }
-    mealTitle
-    mealDescription
-    time
+        mealImage {
+        url
+      }
+        mealTitle
+        mealDescription
+        time
   }}`;
