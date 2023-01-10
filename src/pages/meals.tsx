@@ -1,51 +1,40 @@
+import { GraphQLClient } from "graphql-request"
 import FitCard from "../components/Card"
 import FitSection from "../components/FitSection"
+import { mealsQuery } from "../lib/queries"
 
-export default function Meals() {
-    const meals = [
-        {
-            id: 0,
-            title: "Big Gains Pasta",
-            image: "assets/images/placeholder.png",
-            description: "Lekkere Italiaanse Pasta",
-            time: 90
-        },
-        {
-            id: 1,
-            title: "Big Gains Pasta",
-            image: "assets/images/placeholder.png",
-            description: "Lekkere Italiaanse Pasta",
-            time: 90
-        },
-        {
-            id: 2,
-            title: "Big Gains Pasta",
-            image: "assets/images/placeholder.png",
-            description: "Lekkere Italiaanse Pasta",
-            time: 90
-        },
-        {
-            id: 3,
-            title: "Big Gains Pasta",
-            image: "assets/images/placeholder.png",
-            description: "Lekkere Italiaanse Pasta",
-            time: 90
-        },
-    ]
+export default function Meals({meals}: any) {
     return (
         <FitSection fitSectionTitle="Delicious Meals">
-            {meals.map((meal) => {
+            {meals.length === 0 ? (
+                <span>No meal yet</span>
+            ) : meals.map((meal: any) => {
                 return (
                     <FitCard
                         key={meal.id}
-                        cardLink={`/meal/${meal.id}`}
-                        cardName={meal.title}
-                        cardDescription={meal.description}
-                        cardImage={meal.image}
-                        cardTime={meal.time}
+                        cardLink={`/workout/${meal.id}`}
+                        cardName={meal.mealTitle}
+                        cardDescription={meal.mealDescription}
+                        cardImage={meal.mealImage.url}
+                        cardTime={meal.mealTime}
                     />
                 )
             })}
         </FitSection>
     )
+}
+
+export async function getServerSideProps() {
+    const hygraph = new GraphQLClient(
+        // @ts-ignore
+        process.env.HYGRAPH_ENDPOINT
+    )
+
+    const { meals } = await hygraph.request(mealsQuery)
+
+    return {
+        props: {
+            meals
+        }
+    }
 }

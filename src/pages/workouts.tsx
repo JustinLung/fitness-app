@@ -1,51 +1,42 @@
+import { GraphQLClient } from "graphql-request"
 import FitCard from "../components/Card"
 import FitSection from "../components/FitSection"
+import { workoutsQuery, mealsQuery } from "../lib/queries"
 
-export default function Workouts() {
-    const workouts = [
-        {
-            id: 0,
-            title: "Big Gains Pasta",
-            image: "assets/images/placeholder.png",
-            description: "Lekkere Italiaanse Pasta",
-            time: 90
-        },
-        {
-            id: 1,
-            title: "Big Gains Pasta",
-            image: "assets/images/placeholder.png",
-            description: "Lekkere Italiaanse Pasta",
-            time: 90
-        },
-        {
-            id: 2,
-            title: "Big Gains Pasta",
-            image: "assets/images/placeholder.png",
-            description: "Lekkere Italiaanse Pasta",
-            time: 90
-        },
-        {
-            id: 3,
-            title: "Big Gains Pasta",
-            image: "assets/images/placeholder.png",
-            description: "Lekkere Italiaanse Pasta",
-            time: 90
-        },
-    ]
+export default function Workouts({ workouts, meals }: any) {
     return (
         <FitSection fitSectionTitle="Get Your Pump In">
-            {workouts.map((workout) => {
+            {workouts.length === 0 ? (
+                <span>No workouts yet</span>
+            ) : workouts.map((workout: any) => {
                 return (
                     <FitCard
                         key={workout.id}
-                        cardLink="/"
-                        cardName={workout.title}
-                        cardDescription={workout.description}
-                        cardImage={workout.image}
-                        cardTime={workout.time}
+                        cardLink={`/workout/${workout.id}`}
+                        cardName={workout.workoutTitle}
+                        cardDescription={workout.workoutDescription}
+                        cardImage={workout.workoutImage.url}
+                        cardTime={workout.workoutTime}
                     />
                 )
             })}
         </FitSection>
     )
+}
+
+export async function getServerSideProps() {
+    const hygraph = new GraphQLClient(
+        // @ts-ignore
+        process.env.HYGRAPH_ENDPOINT
+    )
+
+    const { workouts } = await hygraph.request(workoutsQuery);
+    const { meals } = await hygraph.request(mealsQuery)
+
+    return {
+        props: {
+            workouts,
+            meals
+        }
+    }
 }
