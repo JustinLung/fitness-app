@@ -1,4 +1,5 @@
 import { GraphQLClient } from "graphql-request";
+import { Text } from "@chakra-ui/react";
 import { workoutsQuery, mealsQuery } from "../lib/queries";
 import FitCard from "../components/Card";
 import CardSlider from "../components/CardSlider";
@@ -8,7 +9,7 @@ export default function Home({ workouts, meals }: any) {
     <>
       <CardSlider cardSectionHeading="Featured Workouts" cardSectionLink="/workouts">
         {workouts.length === 0 ? (
-          <span>No workouts yet</span>
+          <Text>No workouts yet</Text>
         ) : workouts.map((workout: any) => {
           return (
             <FitCard
@@ -24,7 +25,7 @@ export default function Home({ workouts, meals }: any) {
       </CardSlider>
       <CardSlider cardSectionHeading="Featured Meals" cardSectionLink="/meals">
         {meals.length === 0 ? (
-          <span>No meal yet</span>
+          <Text>No meal yet</Text>
         ) : meals.map((meal: any) => {
           return (
             <FitCard

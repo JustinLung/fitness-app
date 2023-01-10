@@ -1,4 +1,4 @@
-export const workoutsQuery = `query Assets {
+export const workoutsQuery = `query Workouts {
       workouts {
         id
         workoutTitle
@@ -9,7 +9,7 @@ export const workoutsQuery = `query Assets {
       workoutDescription
     }}`;
 
-export const mealsQuery = `query Assets {
+export const mealsQuery = `query Meals {
       meals {
         id
         mealImage {
@@ -19,3 +19,19 @@ export const mealsQuery = `query Assets {
         mealDescription
         time
   }}`;
+
+export const workoutIdQuery = `query Workout($id: ID) {
+        workout(where: {id: $id}) {
+            workoutTitle
+    				workoutImage {
+              url
+            }
+    				workoutDescription
+  					workoutTime
+    				exercises {
+              exerciseTitle
+              exerciseReps
+              exerciseSet
+            }
+        }
+    }`;
