@@ -7,10 +7,9 @@ export default function Home({ workouts, meals }: any) {
   return (
     <>
       <CardSlider cardSectionHeading="Featured Workouts" cardSectionLink="/workouts">
-        {workouts.length === 0 && (
-          <span>There are no featured workouts!</span>
-        )}
-        {workouts.map((workout: any) => {
+        {workouts.length === 0 ? (
+          <span>No workouts yet</span>
+        ) : workouts.map((workout: any) => {
           return (
             <FitCard
               key={workout.id}
@@ -24,17 +23,16 @@ export default function Home({ workouts, meals }: any) {
         })}
       </CardSlider>
       <CardSlider cardSectionHeading="Featured Meals" cardSectionLink="/meals">
-        {meals.length === 0 && (
-          <span>There are no featured meals!</span>
-        )}
-        {meals.map((meal: any) => {
+        {meals.length === 0 ? (
+          <span>No meal yet</span>
+        ) : meals.map((meal: any) => {
           return (
             <FitCard
               key={meal.id}
-              cardLink={`/meal/${meal.id}`}
+              cardLink={`/workout/${meal.id}`}
               cardName={meal.mealTitle}
               cardDescription={meal.mealDescription}
-              cardImage={meal.mealImage}
+              cardImage={meal.mealImage.url}
               cardTime={meal.mealTime}
             />
           )
