@@ -1,91 +1,60 @@
+import { GraphQLClient } from "graphql-request";
+import { workoutsQuery, mealsQuery } from "../lib/queries";
 import FitCard from "../components/Card";
 import CardSlider from "../components/CardSlider";
 
-export default function Home() {
-  const workouts = [
-    {
-      id: 0,
-      title: "Killer Pull Workout",
-      image: "assets/images/placeholder.png",
-      description: "Nice Pull Workout",
-      time: 60
-    },
-    {
-      id: 1,
-      title: "Killer Pull Workout",
-      image: "assets/images/placeholder.png",
-      description: "Nice Pull Workout",
-      time: 60
-    },
-    {
-      id: 2,
-      title: "Killer Pull Workout",
-      image: "assets/images/placeholder.png",
-      description: "Nice Pull Workout",
-      time: 60
-    },
-  ]
-
-  const meals = [
-    {
-      id: 0,
-      title: "Big Gains Pasta",
-      image: "assets/images/placeholder.png",
-      description: "Lekkere Italiaanse Pasta",
-      time: 90
-    },
-    {
-      id: 1,
-      title: "Big Gains Pasta",
-      image: "assets/images/placeholder.png",
-      description: "Lekkere Italiaanse Pasta",
-      time: 90
-    },
-    {
-      id: 2,
-      title: "Big Gains Pasta",
-      image: "assets/images/placeholder.png",
-      description: "Lekkere Italiaanse Pasta",
-      time: 90
-    },
-    {
-      id: 3,
-      title: "Big Gains Pasta",
-      image: "assets/images/placeholder.png",
-      description: "Lekkere Italiaanse Pasta",
-      time: 90
-    },
-  ]
+export default function Home({ workouts, meals }: any) {
   return (
     <>
       <CardSlider cardSectionHeading="Featured Workouts" cardSectionLink="/workouts">
-        {workouts.map((workout) => {
+        {workouts.length === 0 ? (
+          <span>No workouts yet</span>
+        ) : workouts.map((workout: any) => {
           return (
             <FitCard
               key={workout.id}
               cardLink={`/workout/${workout.id}`}
-              cardName={workout.title}
-              cardDescription={workout.description}
-              cardImage={workout.image}
-              cardTime={workout.time}
+              cardName={workout.workoutTitle}
+              cardDescription={workout.workoutDescription}
+              cardImage={workout.workoutImage.url}
+              cardTime={workout.workoutTime}
             />
           )
         })}
       </CardSlider>
       <CardSlider cardSectionHeading="Featured Meals" cardSectionLink="/meals">
-        {meals.map((meal) => {
+        {meals.length === 0 ? (
+          <span>No meal yet</span>
+        ) : meals.map((meal: any) => {
           return (
             <FitCard
               key={meal.id}
-              cardLink={`/meal/${meal.id}`}
-              cardName={meal.title}
-              cardDescription={meal.description}
-              cardImage={meal.image}
-              cardTime={meal.time}
+              cardLink={`/workout/${meal.id}`}
+              cardName={meal.mealTitle}
+              cardDescription={meal.mealDescription}
+              cardImage={meal.mealImage.url}
+              cardTime={meal.mealTime}
             />
           )
         })}
       </CardSlider>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const hygraph = new GraphQLClient(
+    // @ts-ignore
+    process.env.HYGRAPH_ENDPOINT
+  )
+
+  const { workouts } = await hygraph.request(workoutsQuery);
+  const { meals } = await hygraph.request(mealsQuery)
+
+  return {
+    props: {
+      workouts,
+      meals
+    }
+  }
 }
