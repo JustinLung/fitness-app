@@ -13,9 +13,10 @@ import { theme } from "../styles/theme";
 
 interface headerProps {
     headerTitle: string;
+    avatarImage: string;
 }
 
-export default function Header({ headerTitle }: headerProps) {
+export default function Header({ headerTitle, avatarImage }: headerProps) {
     const [menuOpen, setMenu] = useState(false);
     return (
         <Flex
@@ -58,7 +59,7 @@ export default function Header({ headerTitle }: headerProps) {
                 ) : null}
                 <Image src="/assets/icons/notification-icon.svg" cursor="pointer" />
                 <Link href="/">
-                    <Avatar src="https://bit.ly/kent-c-dodds" size="sm" />
+                    <Avatar src={avatarImage} size="sm" />
                 </Link>
             </Flex>
         </Flex>
