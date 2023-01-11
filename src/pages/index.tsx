@@ -3,10 +3,12 @@ import { Text } from "@chakra-ui/react";
 import { workoutsQuery, mealsQuery } from "../lib/queries";
 import FitCard from "../components/Card";
 import CardSlider from "../components/CardSlider";
+import Header from "../components/Header";
 
 export default function Home({ workouts, meals }: any) {
   return (
     <>
+      <Header headerTitle="Welcome, Justin!" />
       <CardSlider cardSectionHeading="Featured Workouts" cardSectionLink="/workouts">
         {workouts.length === 0 ? (
           <Text>No workouts yet</Text>
@@ -30,11 +32,11 @@ export default function Home({ workouts, meals }: any) {
           return (
             <FitCard
               key={meal.id}
-              cardLink={`/workout/${meal.id}`}
+              cardLink={`/meal/${meal.id}`}
               cardName={meal.mealTitle}
               cardDescription={meal.mealDescription}
               cardImage={meal.mealImage.url}
-              cardTime={meal.mealTime}
+              cardTime={meal.time}
             />
           )
         })}

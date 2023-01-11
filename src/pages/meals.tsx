@@ -6,18 +6,18 @@ import { mealsQuery } from "../lib/queries"
 
 export default function Meals({ meals }: any) {
     return (
-        <FitSection fitSectionTitle="Delicious Meals">
+        <FitSection fitSectionTitle="Delicious Meals" fitSectionDescription="Nice meals for you to try out!">
             {meals.length === 0 ? (
                 <Text>No meal yet</Text>
             ) : meals.map((meal: any) => {
                 return (
                     <FitCard
                         key={meal.id}
-                        cardLink={`/workout/${meal.id}`}
+                        cardLink={`/meal/${meal.id}`}
                         cardName={meal.mealTitle}
                         cardDescription={meal.mealDescription}
                         cardImage={meal.mealImage.url}
-                        cardTime={meal.mealTime}
+                        cardTime={meal.time}
                     />
                 )
             })}

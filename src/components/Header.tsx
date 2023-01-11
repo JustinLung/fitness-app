@@ -7,7 +7,6 @@ import {
     List,
     ListItem,
     Fade,
-    Button
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { theme } from "../styles/theme";

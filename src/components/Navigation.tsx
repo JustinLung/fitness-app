@@ -16,22 +16,22 @@ export default function Navigation() {
     >
       <List display="flex" justifyContent="space-around" mx="auto">
         <ListItem>
-          <Link href="/">
+          <Link href="/" _after={{ content: '"Home"', fontSize: ".8rem" }} display="flex" flexDir="column" alignItems="center" justifyContent="center">
             <Image src="/assets/icons/home-icon.svg" />
           </Link>
         </ListItem>
         <ListItem>
-          <Link href="/workouts">
+          <Link href="/workouts" _after={{ content: '"Workouts"', fontSize: ".8rem" }} display="flex" flexDir="column" alignItems="center" justifyContent="center">
             <Image src="/assets/icons/barbell-icon.svg" />
           </Link>
         </ListItem>
         <ListItem>
-          <Link href="/meals">
+          <Link href="/meals" _after={{ content: '"Recipes"', fontSize: ".8rem" }} display="flex" flexDir="column" alignItems="center" justifyContent="center">
             <Image src="/assets/icons/apple-icon.svg" />
           </Link>
         </ListItem>
         <ListItem>
-          <Link href="/profile">
+          <Link href="/profile" _after={{ content: '"Profile"', fontSize: ".8rem" }} display="flex" flexDir="column" alignItems="center" justifyContent="center">
             <Image src="/assets/icons/user-icon.svg" />
           </Link>
         </ListItem>

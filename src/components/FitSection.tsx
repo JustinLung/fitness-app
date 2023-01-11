@@ -1,19 +1,24 @@
-import { Flex, Heading } from "@chakra-ui/react";
+import { Flex, Heading, Text } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
 interface fitSectionProps {
     children: ReactNode;
     fitSectionTitle: string;
+    fitSectionDescription: string;
 }
 
 export default function FitSection({
     children,
     fitSectionTitle,
+    fitSectionDescription
 }: fitSectionProps) {
     return (
-        <Flex as="section" maxW="90vw" mx="auto" gap="1rem" flexDir="column">
+        <Flex as="section" maxW="90vw" mx="auto" my="2rem" flexDir="column">
             <Heading size="xl">{fitSectionTitle}</Heading>
-            {children}
+            <Text mb={2}>{fitSectionDescription}</Text>
+            <Flex flexDir="column" gap="1rem">
+                {children}
+            </Flex>
         </Flex>
     );
 }

@@ -4,9 +4,9 @@ import FitCard from "../components/Card"
 import FitSection from "../components/FitSection"
 import { workoutsQuery, mealsQuery } from "../lib/queries"
 
-export default function Workouts({ workouts, meals }: any) {
+export default function Workouts({ workouts }: any) {
     return (
-        <FitSection fitSectionTitle="Get Your Pump In">
+        <FitSection fitSectionTitle="Get Your Pump In" fitSectionDescription="All workouts ready to use.">
             {workouts.length === 0 ? (
                 <Text>No workouts yet</Text>
             ) : workouts.map((workout: any) => {

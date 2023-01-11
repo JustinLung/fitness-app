@@ -1,5 +1,5 @@
 export const workoutsQuery = `query Workouts {
-      workouts {
+      workouts(first: 3) {
         id
         workoutTitle
         workoutTime
@@ -10,7 +10,7 @@ export const workoutsQuery = `query Workouts {
     }}`;
 
 export const mealsQuery = `query Meals {
-      meals {
+      meals(first: 3) {
         id
         mealImage {
         url
@@ -32,6 +32,30 @@ export const workoutIdQuery = `query Workout($id: ID) {
               exerciseTitle
               exerciseReps
               exerciseSet
+            }
+        }
+    }`;
+
+export const mealIdQuery = `query Meal($id: ID) {
+        meal(where: {id: $id}) {
+            mealTitle
+    				mealImage {
+              url
+            }
+    				mealDescription
+  					time
+            preperationTime
+    				macros {
+              calories
+              proteine
+              carbs
+              fat
+            }
+            ingredient {
+              ingredient
+            }
+            methodOfPreperations {
+              method
             }
         }
     }`;
