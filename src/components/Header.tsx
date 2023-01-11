@@ -58,7 +58,7 @@ export default function Header({ headerTitle, avatarImage }: headerProps) {
                     </Fade>
                 ) : null}
                 <Image src="/assets/icons/notification-icon.svg" cursor="pointer" />
-                <Link href="/">
+                <Link href="/profile">
                     <Avatar src={avatarImage} size="sm" />
                 </Link>
             </Flex>
