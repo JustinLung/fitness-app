@@ -1,12 +1,8 @@
 import { Heading, Flex, Image, Text, List, ListItem, Link } from "@chakra-ui/react"
 import { GraphQLClient } from "graphql-request";
 import { mealIdQuery } from "../../lib/queries";
-import { useEffect } from "react";
 
 export default function MealId({ meal }: any) {
-    useEffect(() => {
-        console.log(meal)
-    })
     return (
         <>
             <Flex as="header" py={3} maxW="90vw" mx="auto">
@@ -31,7 +27,7 @@ export default function MealId({ meal }: any) {
                 }}>
                     {meal.ingredient.map((ingredient: any) => {
                         return (
-                            <ListItem listStyleType="disc" ml="1rem">{ingredient.ingredient}</ListItem>
+                            <ListItem key={ingredient.id} listStyleType="disc" ml="1rem">{ingredient.ingredient}</ListItem>
                         )
                     })}
                 </List>
@@ -40,7 +36,7 @@ export default function MealId({ meal }: any) {
                 }}>
                     {meal.methodOfPreperations.map((method: any) => {
                         return (
-                            <ListItem listStyleType="disc" ml="1rem">{method.method}</ListItem>
+                            <ListItem key={method.id} listStyleType="disc" ml="1rem">{method.method}</ListItem>
                         )
                     })}
                 </List>

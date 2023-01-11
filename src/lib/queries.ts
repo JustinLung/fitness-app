@@ -29,6 +29,7 @@ export const workoutIdQuery = `query Workout($id: ID) {
     				workoutDescription
   					workoutTime
     				exercises {
+              id
               exerciseTitle
               exerciseReps
               exerciseSet
@@ -52,9 +53,11 @@ export const mealIdQuery = `query Meal($id: ID) {
               fat
             }
             ingredient {
+              id
               ingredient
             }
             methodOfPreperations {
+              id
               method
             }
         }

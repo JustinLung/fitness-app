@@ -22,7 +22,7 @@ export default function WorkoutId({ workout }: any) {
                 <Container m={0} p={0}>
                     {workout.exercises.map((exercise: any) => {
                         return (
-                            <Flex justifyContent="space-between" mt={2}>
+                            <Flex justifyContent="space-between" mt={2} key={exercise.id}>
                                 <Text>{exercise.exerciseTitle}</Text>
                                 <Text>{exercise.exerciseSet} Sets {exercise.exerciseReps} Reps</Text>
                             </Flex>
