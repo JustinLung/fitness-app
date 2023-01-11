@@ -49,6 +49,7 @@ export default function CardSlider({
           overflowY="auto"
           overscrollBehaviorX="contain"
           scrollSnapType="x mandatory"
+          py={2}
         >
           {children}
         </Flex>

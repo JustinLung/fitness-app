@@ -11,8 +11,8 @@ export default function Navigation() {
       right={0}
       p="0.7em 0"
       pb="2em"
-      borderRadius=".5em"
       backgroundColor={theme.colors.white}
+      w="100%"
     >
       <List display="flex" justifyContent="space-around" mx="auto">
         <ListItem>

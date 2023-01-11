@@ -18,7 +18,7 @@ export default function FitCard({
 }: ExerciseProps) {
     return (
         <Link href={cardLink} textDecor="none" _hover={{ textDecor: "none" }}>
-            <Card as="article" scrollSnapAlign="center" w="90vw" bg={theme.colors.white} color={theme.colors.black}>
+            <Card as="article" scrollSnapAlign="center" w={{ base: "90vw", md: "30vw" }} bg={theme.colors.white} color={theme.colors.black}>
                 <Image src={cardImage} borderRadius=".2rem" w="100%" h="15rem" objectFit="cover" />
                 <CardBody px={4}>
                     <Heading as="h3" size="md" maxW="15rem">{cardName}</Heading>
