@@ -19,7 +19,7 @@ export default function FitCard({
     return (
         <Link href={cardLink} textDecor="none" _hover={{ textDecor: "none" }}>
             <Card as="article" scrollSnapAlign="center" w="90vw" bg={theme.colors.white} color={theme.colors.black}>
-                <Image src={cardImage} borderRadius=".2rem" w="100%" h="20rem" objectFit="cover" />
+                <Image src={cardImage} borderRadius=".2rem" w="100%" h="15rem" objectFit="cover" />
                 <CardBody px={4}>
                     <Heading as="h3" size="md" maxW="15rem">{cardName}</Heading>
                     <Flex>
