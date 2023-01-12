@@ -12,7 +12,7 @@ import { theme } from "../styles/theme";
 
 export default function Login() {
     return (
-        <Flex flexDir="column" maxW="90vw" h="70vh" mx="auto" my="atuo" as="section">
+        <Flex flexDir="column" maxW="90vw" h="70vh" mx="auto" justifyContent="center" as="section">
             <Heading textAlign="center">Welcome to Fitcheck!</Heading>
             <Text textAlign="center">To improve yourself by sharing!</Text>
             <Stack as="form" spacing={3} mt={6}>

@@ -13,7 +13,7 @@ export default function FitSection({
     fitSectionDescription
 }: fitSectionProps) {
     return (
-        <Flex as="section" maxW="90vw" mx="auto" my="2rem" flexDir="column">
+        <Flex as="section" maxW="90vw" mx="auto" flexDir="column">
             <Heading size="xl">{fitSectionTitle}</Heading>
             <Text mb={2}>{fitSectionDescription}</Text>
             <Flex flexDir="column" gap="1rem">
