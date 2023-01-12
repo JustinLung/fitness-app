@@ -41,7 +41,7 @@ export default function Login() {
                     />
                 </InputGroup>
                 <Link textAlign="center">Forgot Password?</Link>
-                <Text textAlign="center">Don't have an account? <Link>Register</Link></Text>
+                <Text textAlign="center">Don&apos;t have an account? <Link>Register</Link></Text>
             </Stack>
         </Flex >
     );
