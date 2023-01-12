@@ -1,16 +1,14 @@
-import { Heading, Flex, Image, Text, List, ListItem, Link } from "@chakra-ui/react"
+import { Heading, Flex, Image, Text, List, ListItem } from "@chakra-ui/react"
+import DetailHeader from "../../components/detailComponents/detailHeader";
+import DetailHero from "../../components/detailComponents/DetailHero";
 import { GraphQLClient } from "graphql-request";
 import { mealIdQuery } from "../../lib/queries";
 
 export default function MealId({ meal }: any) {
     return (
         <>
-            <Flex as="header" py={3} maxW="90vw" mx="auto">
-                <Link href="/">
-                    <Image src="/assets/icons/back-icon.svg" />
-                </Link>
-            </Flex>
-            <Image src={meal.mealImage.url}></Image>
+            <DetailHeader />
+            <DetailHero heroImage={meal.mealImage.url} />
             <Flex as="section" flexDir="column" maxW="90vw" mx="auto">
                 <Heading size="lg" pt={4}>{meal.mealTitle}</Heading>
                 <Text py={4}>{meal.mealDescription}</Text>

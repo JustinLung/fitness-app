@@ -1,15 +1,12 @@
-import { Heading, Flex, Image, Text, Container, Box, Link } from "@chakra-ui/react"
+import { Heading, Flex, Image, Text, Container, Box } from "@chakra-ui/react"
+import DetailHeader from "../../components/detailComponents/detailHeader";
 import { GraphQLClient } from "graphql-request";
 import { workoutIdQuery } from "../../lib/queries";
 
 export default function WorkoutId({ workout }: any) {
     return (
         <>
-            <Flex as="header" py={3} maxW="90vw" mx="auto">
-                <Link href="/">
-                    <Image src="/assets/icons/back-icon.svg" />
-                </Link>
-            </Flex>
+            <DetailHeader />
             <Box h="20rem" w="100%" as="figure">
                 <Image src={workout.workoutImage.url} objectFit="cover" objectPosition="center" w="100%" h="100%" />
             </Box>
