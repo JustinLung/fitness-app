@@ -1,7 +1,9 @@
 import { Container, List, ListItem, Image, Link } from "@chakra-ui/react";
-import { theme } from '../styles/theme'
+import { useRouter } from "next/router";
+import { theme } from "../styles/theme";
 
 export default function Navigation() {
+  const router = useRouter();
   return (
     <Container
       as="nav"
@@ -11,28 +13,117 @@ export default function Navigation() {
       right={0}
       p="0.7em 0"
       pb="2em"
-      backgroundColor={theme.colors.white}
+      bg={theme.colors.white}
       w="100%"
     >
       <List display="flex" justifyContent="space-around" mx="auto">
         <ListItem>
-          <Link href="/" _after={{ content: '"Home"', fontSize: ".8rem" }} display="flex" flexDir="column" alignItems="center" justifyContent="center">
-            <Image src="/assets/icons/home-icon.svg" />
+          <Link
+            href="/"
+            _hover={{ textDecor: "none" }}
+            _after={{
+              content: '"Home"',
+              fontSize: ".8rem",
+              filter:
+                router.pathname == "/"
+                  ? "invert(12%) sepia(63%) saturate(6234%) hue-rotate(246deg) brightness(87%) contrast(156%)"
+                  : "",
+            }}
+            display="flex"
+            flexDir="column"
+            alignItems="center"
+            justifyContent="center"
+            borderRadius=".2rem"
+          >
+            <Image
+              src="/assets/icons/home-icon.svg"
+              filter={
+                router.pathname == "/"
+                  ? "invert(12%) sepia(63%) saturate(6234%) hue-rotate(246deg) brightness(87%) contrast(156%)"
+                  : ""
+              }
+            />
           </Link>
         </ListItem>
         <ListItem>
-          <Link href="/workouts" _after={{ content: '"Workouts"', fontSize: ".8rem" }} display="flex" flexDir="column" alignItems="center" justifyContent="center">
-            <Image src="/assets/icons/barbell-icon.svg" />
+          <Link
+            href="/workouts"
+            _hover={{ textDecor: "none" }}
+            _after={{
+              content: '"Workouts"',
+              fontSize: ".8rem",
+              filter:
+                router.pathname == "/workouts"
+                  ? "invert(12%) sepia(63%) saturate(6234%) hue-rotate(246deg) brightness(87%) contrast(156%)"
+                  : "",
+            }}
+            display="flex"
+            flexDir="column"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Image
+              src="/assets/icons/barbell-icon.svg"
+              filter={
+                router.pathname == "/workouts"
+                  ? "invert(12%) sepia(63%) saturate(6234%) hue-rotate(246deg) brightness(87%) contrast(156%)"
+                  : ""
+              }
+            />
           </Link>
         </ListItem>
         <ListItem>
-          <Link href="/meals" _after={{ content: '"Recipes"', fontSize: ".8rem" }} display="flex" flexDir="column" alignItems="center" justifyContent="center">
-            <Image src="/assets/icons/apple-icon.svg" />
+          <Link
+            href="/meals"
+            _hover={{ textDecor: "none" }}
+            _after={{
+              content: '"Recipes"',
+              fontSize: ".8rem",
+              filter:
+                router.pathname == "/meals"
+                  ? "invert(12%) sepia(63%) saturate(6234%) hue-rotate(246deg) brightness(87%) contrast(156%)"
+                  : "",
+            }}
+            display="flex"
+            flexDir="column"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Image
+              src="/assets/icons/apple-icon.svg"
+              filter={
+                router.pathname == "/meals"
+                  ? "invert(12%) sepia(63%) saturate(6234%) hue-rotate(246deg) brightness(87%) contrast(156%)"
+                  : ""
+              }
+            />
           </Link>
         </ListItem>
         <ListItem>
-          <Link href="/profile" _after={{ content: '"Profile"', fontSize: ".8rem" }} display="flex" flexDir="column" alignItems="center" justifyContent="center">
-            <Image src="/assets/icons/user-icon.svg" />
+          <Link
+            href="/profile"
+            _after={{
+              content: '"Profile"',
+              fontSize: ".8rem",
+              filter:
+                router.pathname == "/profile"
+                  ? "invert(12%) sepia(63%) saturate(6234%) hue-rotate(246deg) brightness(87%) contrast(156%)"
+                  : "",
+            }}
+            _hover={{ textDecor: "none" }}
+            display="flex"
+            flexDir="column"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Image
+              src="/assets/icons/user-icon.svg"
+              filter={
+                router.pathname == "/profile"
+                  ? "invert(12%) sepia(63%) saturate(6234%) hue-rotate(246deg) brightness(87%) contrast(156%)"
+                  : ""
+              }
+            />
           </Link>
         </ListItem>
       </List>
