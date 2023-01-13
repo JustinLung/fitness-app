@@ -28,18 +28,18 @@ export default function CardSlider({
           </Heading>
           <NextLink href={cardSectionLink}>
             <Link
-              backgroundColor={theme.colors.black}
+              backgroundColor={theme.colors.orange}
               color={theme.colors.white}
-              border={`1px solid ${theme.colors.black}`}
+              border={`1px solid ${theme.colors.orange}`}
               borderRadius="2rem"
               px="1.5rem"
               py=".2rem"
               _hover={{
                 textDecor: "none",
-                color: theme.colors.black,
+                color: theme.colors.orange,
                 backgroundColor: "transparent",
                 border: "1px solid",
-                borderColor: theme.colors.black
+                borderColor: theme.colors.orange
               }}
             >
               View All
