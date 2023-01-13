@@ -8,7 +8,7 @@ export default function WorkoutId({ workout }: any) {
         <>
             <DetailHeader />
             <Box h="20rem" w="100%" as="figure">
-                <Image src={workout.workoutImage.url} objectFit="cover" objectPosition="center" w="100%" h="100%" />
+                <Image src={workout.workoutImage.url} alt={workout.workoutTitle} objectFit="cover" objectPosition="center" w="100%" h="100%" />
             </Box>
             <Flex as="section" flexDir="column" maxW="90vw" mx="auto">
                 <Flex justifyContent="space-between" alignItems="center" mt={5}>
