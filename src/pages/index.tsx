@@ -21,6 +21,7 @@ export default function Home({ workouts, meals }: any) {
               cardDescription={workout.workoutDescription}
               cardImage={workout.workoutImage.url}
               cardTime={workout.workoutTime}
+              cardDificulty={workout.difficulty}
             />
           )
         })}
@@ -37,6 +38,7 @@ export default function Home({ workouts, meals }: any) {
               cardDescription={meal.mealDescription}
               cardImage={meal.mealImage.url}
               cardTime={meal.time}
+              cardDificulty={meal.difficulty}
             />
           )
         })}

@@ -3,6 +3,7 @@ export const workoutsQuery = `query Workouts {
         id
         workoutTitle
         workoutTime
+        difficulty
         workoutImage {
           url
         }
@@ -15,6 +16,7 @@ export const mealsQuery = `query Meals {
         mealImage {
         url
       }
+        difficulty
         mealTitle
         mealDescription
         time
