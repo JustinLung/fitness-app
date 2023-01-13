@@ -1,5 +1,5 @@
 import { Heading, Flex, Image, Text, Container, Box } from "@chakra-ui/react"
-import DetailHeader from "../../components/detailComponents/detailHeader";
+import DetailHeader from "../../components/detailComponents/DetailHeader";
 import { GraphQLClient } from "graphql-request";
 import { workoutIdQuery } from "../../lib/queries";
 
