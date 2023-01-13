@@ -23,11 +23,9 @@ export default function FitCard({
                 <Card as="article" scrollSnapAlign="center" w={{ base: "90vw" }} bg={theme.colors.white} color={theme.colors.black}>
                     <Image src={cardImage} alt={cardName} borderRadius=".2rem" w="100%" h="15rem" objectFit="cover" />
                     <CardBody px={4}>
+                        <Text ml="auto">{cardTime} Min</Text>
                         <Heading as="h3" size="md" maxW="15rem">{cardName}</Heading>
-                        <Flex>
-                            <Text whiteSpace="nowrap" overflow="hidden" textOverflow="ellipsis" maxW="15rem">{cardDescription}</Text>
-                            <Text ml="auto">{cardTime} Min</Text>
-                        </Flex>
+                        <Text whiteSpace="nowrap" overflow="hidden" textOverflow="ellipsis" maxW="15rem">{cardDescription}</Text>
                     </CardBody>
                 </Card>
             </Link>

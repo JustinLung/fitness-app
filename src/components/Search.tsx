@@ -10,7 +10,7 @@ export default function Search({ searchPlaceholder }: SearchInterface) {
         <>
             <InputGroup maxW="90vw" mx="auto" my={5}>
                 <InputLeftElement h="full" ><Image src="/assets/icons/search-icon.svg" alt="Search" /></InputLeftElement>
-                <Input type="text" placeholder={searchPlaceholder} _placeholder={{ color: theme.colors.black }} bg={theme.colors.lightgrey} />
+                <Input type="search" placeholder={searchPlaceholder} _placeholder={{ color: theme.colors.black }} bg={theme.colors.lightgrey} />
             </InputGroup>
         </>
     )
