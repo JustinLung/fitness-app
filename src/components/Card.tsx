@@ -1,4 +1,5 @@
 import { Card, CardBody, Text, Image, Heading, Link, Flex } from "@chakra-ui/react";
+import NextLink from 'next/link'
 import { theme } from '../styles/theme'
 
 interface ExerciseProps {
@@ -17,17 +18,19 @@ export default function FitCard({
     cardLink,
 }: ExerciseProps) {
     return (
-        <Link href={cardLink} textDecor="none" _hover={{ textDecor: "none" }}>
-            <Card as="article" scrollSnapAlign="center" w={{ base: "90vw" }} bg={theme.colors.white} color={theme.colors.black}>
-                <Image src={cardImage} alt={cardName} borderRadius=".2rem" w="100%" h="15rem" objectFit="cover" />
-                <CardBody px={4}>
-                    <Heading as="h3" size="md" maxW="15rem">{cardName}</Heading>
-                    <Flex>
-                        <Text whiteSpace="nowrap" overflow="hidden" textOverflow="ellipsis" maxW="15rem">{cardDescription}</Text>
-                        <Text ml="auto">{cardTime} Min</Text>
-                    </Flex>
-                </CardBody>
-            </Card>
-        </Link>
+        <NextLink href={cardLink}>
+            <Link textDecor="none" _hover={{ textDecor: "none" }}>
+                <Card as="article" scrollSnapAlign="center" w={{ base: "90vw" }} bg={theme.colors.white} color={theme.colors.black}>
+                    <Image src={cardImage} alt={cardName} borderRadius=".2rem" w="100%" h="15rem" objectFit="cover" />
+                    <CardBody px={4}>
+                        <Heading as="h3" size="md" maxW="15rem">{cardName}</Heading>
+                        <Flex>
+                            <Text whiteSpace="nowrap" overflow="hidden" textOverflow="ellipsis" maxW="15rem">{cardDescription}</Text>
+                            <Text ml="auto">{cardTime} Min</Text>
+                        </Flex>
+                    </CardBody>
+                </Card>
+            </Link>
+        </NextLink>
     );
 }

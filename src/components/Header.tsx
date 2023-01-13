@@ -8,6 +8,7 @@ import {
     ListItem,
     Fade,
 } from "@chakra-ui/react";
+import NextLink from 'next/link'
 import { useState } from "react";
 import { theme } from "../styles/theme";
 
@@ -50,18 +51,24 @@ export default function Header({ headerTitle, avatarImage }: headerProps) {
                             right="3rem"
                         >
                             <ListItem px={5} py={2} whiteSpace="nowrap">
-                                <Link>Add Workout</Link>
+                                <NextLink href="/">
+                                    <Link>Add Workout</Link>
+                                </NextLink>
                             </ListItem>
                             <ListItem px={5} py={2} borderTop={`1px solid ${theme.colors.white}`}>
-                                <Link>Add Meal</Link>
+                                <NextLink href="/">
+                                    <Link>Add Meal</Link>
+                                </NextLink>
                             </ListItem>
                         </List>
                     </Fade>
                 ) : null}
                 <Image src="/assets/icons/notification-icon.svg" alt="Notification Icon" cursor="pointer" />
-                <Link href="/profile">
-                    <Avatar src={avatarImage} size="sm" />
-                </Link>
+                <NextLink href="/profile">
+                    <Link>
+                        <Avatar src={avatarImage} size="sm" />
+                    </Link>
+                </NextLink>
             </Flex>
         </Flex>
     );
