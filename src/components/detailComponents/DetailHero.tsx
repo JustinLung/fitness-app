@@ -6,6 +6,6 @@ interface DetailHeroProps {
 
 export default function DetailHero({ heroImage }: DetailHeroProps) {
     return (
-        <Image src={heroImage}></ Image>
+        <Image src={heroImage} alt="Hero Image"></ Image>
     )
 }

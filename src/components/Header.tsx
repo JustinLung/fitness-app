@@ -35,6 +35,7 @@ export default function Header({ headerTitle, avatarImage }: headerProps) {
                     src="/assets/icons/add-icon.svg"
                     cursor="pointer"
                     onClick={() => setMenu(!menuOpen)}
+                    alt="Add workout or meal icon"
                 />
                 {menuOpen ? (
                     <Fade in={menuOpen}>
@@ -57,7 +58,7 @@ export default function Header({ headerTitle, avatarImage }: headerProps) {
                         </List>
                     </Fade>
                 ) : null}
-                <Image src="/assets/icons/notification-icon.svg" cursor="pointer" />
+                <Image src="/assets/icons/notification-icon.svg" alt="Notification Icon" cursor="pointer" />
                 <Link href="/profile">
                     <Avatar src={avatarImage} size="sm" />
                 </Link>

@@ -37,6 +37,7 @@ export default function Navigation() {
           >
             <Image
               src="/assets/icons/home-icon.svg"
+              alt="Home"
               filter={
                 router.pathname == "/"
                   ? "invert(12%) sepia(63%) saturate(6234%) hue-rotate(246deg) brightness(87%) contrast(156%)"
@@ -63,6 +64,7 @@ export default function Navigation() {
             justifyContent="center"
           >
             <Image
+              alt="Workouts"
               src="/assets/icons/barbell-icon.svg"
               filter={
                 router.pathname == "/workouts"
@@ -90,6 +92,7 @@ export default function Navigation() {
             justifyContent="center"
           >
             <Image
+              alt="Meals"
               src="/assets/icons/apple-icon.svg"
               filter={
                 router.pathname == "/meals"
@@ -117,6 +120,7 @@ export default function Navigation() {
             justifyContent="center"
           >
             <Image
+              alt="Profile"
               src="/assets/icons/user-icon.svg"
               filter={
                 router.pathname == "/profile"
