@@ -26,9 +26,9 @@ export default function CardSlider({
           {cardSectionHeading}
         </Heading>
         <Link
-          backgroundColor={theme.colors.orange}
+          backgroundColor={theme.colors.black}
           color={theme.colors.white}
-          border={`1px solid ${theme.colors.orange}`}
+          border={`1px solid ${theme.colors.black}`}
           borderRadius="2rem"
           px="1.5rem"
           py=".2rem"
@@ -36,10 +36,10 @@ export default function CardSlider({
           href={cardSectionLink}
           _hover={{
             textDecor: "none",
-            color: theme.colors.orange,
+            color: theme.colors.black,
             backgroundColor: "transparent",
             border: "1px solid",
-            borderColor: theme.colors.orange
+            borderColor: theme.colors.black
           }}
         >
           View All

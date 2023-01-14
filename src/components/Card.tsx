@@ -31,7 +31,7 @@ export default function FitCard({
                     <Heading as="h3" fontSize="2xl" maxW="18rem">{cardName}</Heading>
                     <Text mt="auto" fontSize=".8rem">{cardCategory}</Text>
                     <Text fontSize=".8rem">{cardTime} minutes</Text>
-                    <Link as={NextLink} href={cardLink} position="absolute" bottom={4} right={4} bg={theme.colors.black} px={4} py={1} borderRadius="1rem" textDecor="none" _hover={{ textDecor: "none" }}>View</Link>
+                    <Link as={NextLink} href={cardLink} position="absolute" border="1px solid" borderColor={theme.colors.orange} bottom={4} right={4} bg={theme.colors.orange} px={4} py={1} borderRadius="1rem" textDecor="none" _hover={{ textDecor: "none", bg: "transparent", border: "1px solid", borderColor: theme.colors.orange, color: theme.colors.orange }}>View</Link>
                 </Flex>
             </Box>
         </Link>
