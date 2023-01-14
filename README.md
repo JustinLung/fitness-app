@@ -1,28 +1,23 @@
 # 🏋️‍♀️ Fitcheck
 
-## 📚 Inhoudsopgave
-  * [Beschrijving](#beschrijving)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Gebruik](#gebruik)
-  * [Bronnen](#bronnen)
-  * [Licentie](#licentie)
-
 ## 📃 Beschrijving
+
 Dit is de repository, voor de Fitcheck Progressive Web App die ik gebouwd heb met behulp van Nextjs, Hygraph en Chakra-UI.
 
 [🌐 Live](https://fitcheck-nextjs.vercel.app/)
 
 ## 🔮 Kenmerken
-* 📙 HTML
-* 📘 CSS
-* 🚀 Typescript
-* 🍴 Nextjs
-* ⚛️ GraphQL
-* 📐 Hygraph
-* 🍙 Framer Motion
+
+- 📙 HTML
+- 📘 CSS
+- 🚀 Typescript
+- 🍴 Nextjs
+- ⚛️ GraphQL
+- 📐 Hygraph
+- 🍙 Framer Motion
 
 ## ⚡ Installatie & Gebruik
+
 ```
 # Cloning the repository
 git clone https://github.com/JustinLung/fitness-app.git
@@ -38,6 +33,7 @@ npm run start
 ```
 
 ## Bronnen
+
 - [Next.js](https://nextjs.org/)
 - [Hygraph](https://hygraph.com/)
 - [Framer Motion](https://www.framer.com/motion/)
