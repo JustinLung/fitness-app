@@ -21,54 +21,52 @@ interface headerProps {
 export default function Header({ headerTitle, avatarImage }: headerProps) {
     const [menuOpen, setMenu] = useState(false);
     return (
-        <>
-            <Flex
-                as="header"
-                justifyContent="space-between"
-                alignItems="center"
-                maxW="90vw"
-                mx="auto"
-                py={5}
-            >
-                <Heading as="h1" size="md">
-                    {headerTitle}
-                </Heading>
-                <Flex alignItems="center">
-                    <Button onClick={() => setMenu(!menuOpen)} display="flex" alignItems="center" justifyContent="center" p={0} m={0}>
-                        <AddIcon width={24} height={24} />
-                    </Button>
-                    {menuOpen ? (
-                        <Fade in={menuOpen}>
-                            <List
-                                backgroundColor={theme.colors.black}
-                                color={theme.colors.white}
-                                zIndex={99}
-                                borderRadius=".2rem"
-                                transition="ease-in"
-                                position="absolute"
-                                left="50%"
-                                right="3rem"
-                            >
-                                <ListItem px={5} py={2} whiteSpace="nowrap">
-                                    <NextLink href="/">
-                                        <Link>Add Workout</Link>
-                                    </NextLink>
-                                </ListItem>
-                                <ListItem px={5} py={2} borderTop={`1px solid ${theme.colors.white}`}>
-                                    <NextLink href="/">
-                                        <Link>Add Meal</Link>
-                                    </NextLink>
-                                </ListItem>
-                            </List>
-                        </Fade>
-                    ) : null}
-                    <NextLink href="/profile">
-                        <Link pl={2}>
-                            <Avatar src={avatarImage} size="sm" />
-                        </Link>
-                    </NextLink>
-                </Flex>
+        <Flex
+            as="header"
+            justifyContent="space-between"
+            alignItems="center"
+            maxW="90vw"
+            mx="auto"
+            py={5}
+        >
+            <Heading as="h1" size="md">
+                {headerTitle}
+            </Heading>
+            <Flex alignItems="center">
+                <Button onClick={() => setMenu(!menuOpen)} display="flex" alignItems="center" justifyContent="center" p={0} m={0}>
+                    <AddIcon width={24} height={24} />
+                </Button>
+                {menuOpen ? (
+                    <Fade in={menuOpen}>
+                        <List
+                            backgroundColor={theme.colors.black}
+                            color={theme.colors.white}
+                            zIndex={99}
+                            borderRadius=".2rem"
+                            transition="ease-in"
+                            position="absolute"
+                            left="50%"
+                            right="3rem"
+                        >
+                            <ListItem px={5} py={2} whiteSpace="nowrap">
+                                <NextLink href="/">
+                                    <Link>Add Workout</Link>
+                                </NextLink>
+                            </ListItem>
+                            <ListItem px={5} py={2} borderTop={`1px solid ${theme.colors.white}`}>
+                                <NextLink href="/">
+                                    <Link>Add Meal</Link>
+                                </NextLink>
+                            </ListItem>
+                        </List>
+                    </Fade>
+                ) : null}
+                <NextLink href="/profile">
+                    <Link pl={2}>
+                        <Avatar src={avatarImage} size="sm" />
+                    </Link>
+                </NextLink>
             </Flex>
-        </>
+        </Flex>
     );
 }

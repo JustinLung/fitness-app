@@ -18,7 +18,7 @@ export default function Home({ workouts, meals }: any) {
               key={workout.id}
               cardLink={`/workout/${workout.id}`}
               cardName={workout.workoutTitle}
-              cardCategory="Strength"
+              cardCategory={workout.workoutCategory}
               cardDescription={workout.workoutDescription}
               cardImage={workout.workoutImage.url}
               cardTime={workout.workoutTime}
@@ -38,7 +38,7 @@ export default function Home({ workouts, meals }: any) {
                 cardLink={`/meal/${meal.id}`}
                 cardName={meal.mealTitle}
                 cardDescription={meal.mealDescription}
-                cardCategory="Baking"
+                cardCategory={meal.mealCategory}
                 cardImage={meal.mealImage.url}
                 cardTime={meal.time}
                 cardDificulty={meal.difficulty}

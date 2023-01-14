@@ -8,6 +8,7 @@ export const workoutsQuery = `query Workouts {
           url
         }
       workoutDescription
+      workoutCategory
     }}`;
 
 export const mealsQuery = `query Meals {
@@ -20,6 +21,7 @@ export const mealsQuery = `query Meals {
         mealTitle
         mealDescription
         time
+        mealCategory
   }}`;
 
 export const workoutIdQuery = `query Workout($id: ID) {
@@ -36,6 +38,7 @@ export const workoutIdQuery = `query Workout($id: ID) {
               exerciseReps
               exerciseSet
             }
+            workoutCategory
         }
     }`;
 
@@ -62,5 +65,6 @@ export const mealIdQuery = `query Meal($id: ID) {
               id
               method
             }
+            mealCategory
         }
     }`;

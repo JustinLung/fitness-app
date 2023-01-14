@@ -15,6 +15,7 @@ export default function Meals({ meals }: any) {
                 ) : meals.map((meal: any) => {
                     return (
                         <FitCard
+                            cardCategory={meal.mealCategory}
                             cardDificulty={meal.difficulty}
                             key={meal.id}
                             cardLink={`/meal/${meal.id}`}
