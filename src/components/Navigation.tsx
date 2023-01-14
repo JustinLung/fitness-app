@@ -1,6 +1,10 @@
-import { Box, List, ListItem, Image, Link, color } from "@chakra-ui/react";
-import NextLink from 'next/link'
+import { Box, List, ListItem } from "@chakra-ui/react";
 import { useRouter } from "next/router";
+import HomeIcon from "./icons/HomeIcon";
+import AppleIcon from "./icons/AppleIcon";
+import BarbellIcon from "./icons/BarbellIcon";
+import UserIcon from "./icons/UserIcon";
+import NavItem from "./NavItem";
 import { theme } from "../styles/theme";
 
 export default function Navigation() {
@@ -21,121 +25,41 @@ export default function Navigation() {
       borderColor={theme.colors.lightgrey}
     >
       <List display="flex" justifyContent="space-around" mx="auto">
-        <ListItem>
-          <Link
-            _hover={{ textDecor: "none" }}
-            _after={{
-              content: '"Home"',
-              fontSize: ".8rem",
-              opacity:
-                router.pathname == "/"
-                  ? "1"
-                  : ".5",
-            }}
-            display="flex"
-            flexDir="column"
-            alignItems="center"
-            justifyContent="center"
-            as={NextLink}
-            href="/"
-          >
-            <Image
-              src="/assets/icons/home-icon.svg"
-              alt="Home"
-              opacity={
-                router.pathname == "/"
-                  ? "1"
-                  : ".5"
-              }
-            />
-          </Link>
+        <ListItem opacity={
+          router.pathname == "/"
+            ? "1"
+            : ".5"
+        }>
+          <NavItem href="/" navTitle="Home">
+            <HomeIcon width={24} height={24} />
+          </NavItem>
+        </ListItem >
+        <ListItem opacity={
+          router.pathname == "/workouts"
+            ? "1"
+            : ".5"
+        }>
+          <NavItem href="/workouts" navTitle="Workouts">
+            <BarbellIcon width={24} height={24} />
+          </NavItem>
         </ListItem>
-        <ListItem>
-          <Link
-            _hover={{ textDecor: "none" }}
-            _after={{
-              content: '"Workouts"',
-              fontSize: ".8rem",
-              opacity:
-                router.pathname == "/workouts"
-                  ? "1"
-                  : ".5",
-            }}
-            display="flex"
-            flexDir="column"
-            alignItems="center"
-            justifyContent="center"
-            as={NextLink}
-            href="/workouts"
-          >
-            <Image
-              alt="Workouts"
-              src="/assets/icons/barbell-icon.svg"
-              opacity={
-                router.pathname == "/workouts"
-                  ? "1"
-                  : ".5"
-              }
-            />
-          </Link>
+        <ListItem opacity={
+          router.pathname == "/meals"
+            ? "1"
+            : ".5"
+        }>
+          <NavItem href="/meals" navTitle="Meals">
+            <AppleIcon width={24} height={24} />
+          </NavItem>
         </ListItem>
-        <ListItem>
-          <Link
-            _hover={{ textDecor: "none" }}
-            _after={{
-              content: '"Recipes"',
-              fontSize: ".8rem",
-              opacity:
-                router.pathname == "/meals"
-                  ? "1"
-                  : ".5",
-            }}
-            display="flex"
-            flexDir="column"
-            alignItems="center"
-            justifyContent="center"
-            as={NextLink}
-            href="/meals"
-          >
-            <Image
-              alt="Meals"
-              src="/assets/icons/apple-icon.svg"
-              opacity={
-                router.pathname == "/meals"
-                  ? "1"
-                  : ".5"
-              }
-            />
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link
-            _after={{
-              content: '"Profile"',
-              fontSize: ".8rem",
-              opacity:
-                router.pathname == "/profile"
-                  ? "1"
-                  : ".5",
-            }}
-            _hover={{ textDecor: "none" }}
-            display="flex"
-            flexDir="column"
-            alignItems="center"
-            justifyContent="center"
-            as={NextLink}
-            href="/profile"
-          >
-            <Image
-              alt="Profile"
-              src="/assets/icons/user-icon.svg"
-              opacity={
-                router.pathname == "/profile"
-                  ? "1"
-                  : ".5"
-              }
-            />
-          </Link>
+        <ListItem opacity={
+          router.pathname == "/profile"
+            ? "1"
+            : ".5"
+        }>
+          <NavItem href="/profile" navTitle="Profile">
+            <UserIcon width={24} height={24} />
+          </NavItem>
         </ListItem>
       </List>
     </Box>
