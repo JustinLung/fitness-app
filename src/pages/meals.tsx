@@ -1,6 +1,6 @@
 import { GraphQLClient } from "graphql-request"
 import { Text } from "@chakra-ui/react"
-import FitCard from "../components/Card"
+import CardAlt from "../components/CardAlt"
 import FitSection from "../components/FitSection"
 import { mealsQuery } from "../lib/queries"
 import Search from "../components/Search"
@@ -14,7 +14,7 @@ export default function Meals({ meals }: any) {
                     <Text>No meal yet</Text>
                 ) : meals.map((meal: any) => {
                     return (
-                        <FitCard
+                        <CardAlt
                             cardCategory={meal.mealCategory}
                             cardDificulty={meal.difficulty}
                             key={meal.id}

@@ -10,7 +10,8 @@ export const theme = extendTheme({
     white: "#ffffff",
     grey: "#DCDCDC",
     lightgrey: "#F0F0F0",
-    orange: "#FE5E41"
+    orange: "#FE5E41",
+    darkerWhite: "#E1D9D1"
   },
   styles: {
     global: () => ({
