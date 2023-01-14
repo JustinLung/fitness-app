@@ -29,7 +29,7 @@ export default function Header({ headerTitle, avatarImage }: headerProps) {
             mx="auto"
             py={5}
         >
-            <Heading as="h1" size="md">
+            <Heading as="h1" size="md" fontWeight={500}>
                 {headerTitle}
             </Heading>
             <Flex alignItems="center">
