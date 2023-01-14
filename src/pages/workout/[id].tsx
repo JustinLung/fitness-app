@@ -1,32 +1,54 @@
-import { Heading, Flex, Image, Text, Container, Box } from "@chakra-ui/react"
+import {
+    Table,
+    Thead,
+    Tbody,
+    Image,
+    Tr,
+    Th,
+    Td,
+    TableContainer,
+    Heading,
+    Box,
+    Text,
+} from '@chakra-ui/react'
 import DetailHeader from "../../components/detailComponents/DetailHeader";
+import DetailHero from '../../components/detailComponents/DetailHero';
 import { GraphQLClient } from "graphql-request";
 import { workoutIdQuery } from "../../lib/queries";
+import { theme } from '../../styles/theme'
 
 export default function WorkoutId({ workout }: any) {
+    console.log(workout)
     return (
         <>
             <DetailHeader />
-            <Box h="20rem" w="100%" as="figure">
-                <Image src={workout.workoutImage.url} alt={workout.workoutTitle} objectFit="cover" objectPosition="center" w="100%" h="100%" />
-            </Box>
-            <Flex as="section" flexDir="column" maxW="90vw" mx="auto">
-                <Flex justifyContent="space-between" alignItems="center" mt={5}>
-                    <Heading size="lg">{workout.workoutTitle}</Heading>
-                    <Text>{workout.workoutTime} min</Text>
-                </Flex>
+            <DetailHero heroImage={workout.workoutImage.url} />
+            <Box w="90vw" mx="auto" py={5}>
+                <Heading size="lg">{workout.workoutTitle}</Heading>
                 <Text>{workout.workoutDescription}</Text>
-                <Container m={0} p={0}>
-                    {workout.exercises.map((exercise: any) => {
-                        return (
-                            <Flex justifyContent="space-between" mt={2} key={exercise.id}>
-                                <Text>{exercise.exerciseTitle}</Text>
-                                <Text>{exercise.exerciseSet} Sets {exercise.exerciseReps} Reps</Text>
-                            </Flex>
-                        )
-                    })}
-                </Container>
-            </Flex>
+            </Box>
+            <TableContainer maxW="90vw" mx="auto">
+                <Table variant='simple' size='sm'>
+                    <Thead>
+                        <Tr>
+                            <Th color={theme.colors.orange} px={0}>Exercises</Th>
+                            <Th color={theme.colors.orange} px={0} isNumeric>Sets</Th>
+                            <Th color={theme.colors.orange} px={0} isNumeric>Reps</Th>
+                        </Tr>
+                    </Thead>
+                    <Tbody>
+                        {workout.exercises.map((exercise: any) => {
+                            return (
+                                <Tr key={exercise.id}>
+                                    <Td p={0}>{exercise.exerciseTitle}</Td>
+                                    <Td isNumeric px={0}>{exercise.exerciseSet}</Td>
+                                    <Td isNumeric px={0}>{exercise.exerciseReps}</Td>
+                                </Tr>
+                            )
+                        })}
+                    </Tbody>
+                </Table>
+            </TableContainer>
         </>
     )
 }
