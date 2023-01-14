@@ -15,6 +15,7 @@ export default function Workouts({ workouts }: any) {
                 ) : workouts.map((workout: any) => {
                     return (
                         <FitCard
+                            cardDificulty={workout.difficulty}
                             key={workout.id}
                             cardLink={`/workout/${workout.id}`}
                             cardName={workout.workoutTitle}
