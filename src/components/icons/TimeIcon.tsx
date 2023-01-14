@@ -1,7 +1,4 @@
-interface IconProps {
-    width: number;
-    height: number;
-}
+import { IconProps } from "../../lib/interfaces"
 
 export default function TimeIcon({ width, height }: IconProps) {
     return (
