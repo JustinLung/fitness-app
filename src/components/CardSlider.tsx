@@ -15,14 +15,14 @@ export default function CardSlider({
   cardSectionLink
 }: CardSectionProps) {
   return (
-    <Box as="section" maxW="90vw" mx="auto">
+    <Box as="section" maxW="90vw" mx="auto" mb={3}>
       <Flex
         as="header"
         justifyContent="space-between"
         alignItems="center"
         py={3}
       >
-        <Heading as="h2" size="lg">
+        <Heading as="h2" size="md">
           {cardSectionHeading}
         </Heading>
         <NextLink href={cardSectionLink}>
