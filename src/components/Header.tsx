@@ -33,7 +33,7 @@ export default function Header({ headerTitle, avatarImage }: headerProps) {
                 {headerTitle}
             </Heading>
             <Flex alignItems="center">
-                <Button onClick={() => setMenu(!menuOpen)} bg="none" display="flex" alignItems="center" justifyContent="center" p={0} m={0}>
+                <Button onClick={() => setMenu(!menuOpen)} bg="none" display="flex" alignItems="center" justifyContent="center" p={0} m={0} _hover={{ bg: "none" }}>
                     <AddIcon width={24} height={24} />
                 </Button>
                 {menuOpen ? (
