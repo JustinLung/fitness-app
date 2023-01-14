@@ -1,4 +1,4 @@
-import { Image } from "@chakra-ui/react";
+import { Image, Box } from "@chakra-ui/react";
 
 interface DetailHeroProps {
     heroImage: string;
@@ -6,6 +6,8 @@ interface DetailHeroProps {
 
 export default function DetailHero({ heroImage }: DetailHeroProps) {
     return (
-        <Image src={heroImage} alt="Hero Image"></ Image>
+        <Box h="20rem" w="100%">
+            <Image src={heroImage} w="100%" h="100%" objectFit="cover" alt="Hero Image" />
+        </Box>
     )
 }

@@ -49,23 +49,17 @@ export default function Header({ headerTitle, avatarImage }: headerProps) {
                             right="3rem"
                         >
                             <ListItem px={5} py={2} whiteSpace="nowrap">
-                                <NextLink href="/">
-                                    <Link>Add Workout</Link>
-                                </NextLink>
+                                <Link>Add Workout</Link>
                             </ListItem>
                             <ListItem px={5} py={2} borderTop={`1px solid ${theme.colors.white}`}>
-                                <NextLink href="/">
-                                    <Link>Add Meal</Link>
-                                </NextLink>
+                                <Link>Add Meal</Link>
                             </ListItem>
                         </List>
                     </Fade>
                 ) : null}
-                <NextLink href="/profile">
-                    <Link pl={2}>
-                        <Avatar src={avatarImage} size="sm" />
-                    </Link>
-                </NextLink>
+                <Link pl={2} as={NextLink} href="/profile">
+                    <Avatar src={avatarImage} size="sm" />
+                </Link>
             </Flex>
         </Flex>
     );

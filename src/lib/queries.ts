@@ -26,6 +26,7 @@ export const mealsQuery = `query Meals {
 
 export const workoutIdQuery = `query Workout($id: ID) {
         workout(where: {id: $id}) {
+            id
             workoutTitle
     				workoutImage {
               url
@@ -44,6 +45,7 @@ export const workoutIdQuery = `query Workout($id: ID) {
 
 export const mealIdQuery = `query Meal($id: ID) {
         meal(where: {id: $id}) {
+            id
             mealTitle
     				mealImage {
               url

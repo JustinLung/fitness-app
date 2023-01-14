@@ -25,25 +25,25 @@ export default function CardSlider({
         <Heading as="h2" size="md">
           {cardSectionHeading}
         </Heading>
-        <NextLink href={cardSectionLink}>
-          <Link
-            backgroundColor={theme.colors.orange}
-            color={theme.colors.white}
-            border={`1px solid ${theme.colors.orange}`}
-            borderRadius="2rem"
-            px="1.5rem"
-            py=".2rem"
-            _hover={{
-              textDecor: "none",
-              color: theme.colors.orange,
-              backgroundColor: "transparent",
-              border: "1px solid",
-              borderColor: theme.colors.orange
-            }}
-          >
-            View All
-          </Link>
-        </NextLink>
+        <Link
+          backgroundColor={theme.colors.orange}
+          color={theme.colors.white}
+          border={`1px solid ${theme.colors.orange}`}
+          borderRadius="2rem"
+          px="1.5rem"
+          py=".2rem"
+          as={NextLink}
+          href={cardSectionLink}
+          _hover={{
+            textDecor: "none",
+            color: theme.colors.orange,
+            backgroundColor: "transparent",
+            border: "1px solid",
+            borderColor: theme.colors.orange
+          }}
+        >
+          View All
+        </Link>
       </Flex>
       <Flex
         gap="1rem"
