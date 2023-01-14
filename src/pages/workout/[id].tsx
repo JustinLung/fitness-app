@@ -2,7 +2,6 @@ import {
     Table,
     Thead,
     Tbody,
-    Image,
     Tr,
     Th,
     Td,
@@ -18,7 +17,6 @@ import { workoutIdQuery } from "../../lib/queries";
 import { theme } from '../../styles/theme'
 
 export default function WorkoutId({ workout }: any) {
-    console.log(workout)
     return (
         <>
             <DetailHeader />
