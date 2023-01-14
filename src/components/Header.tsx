@@ -33,7 +33,7 @@ export default function Header({ headerTitle, avatarImage }: headerProps) {
                 <Heading as="h1" size="md">
                     {headerTitle}
                 </Heading>
-                <Flex alignItems="center" gap={1}>
+                <Flex alignItems="center">
                     <Button onClick={() => setMenu(!menuOpen)} display="flex" alignItems="center" justifyContent="center" p={0} m={0}>
                         <AddIcon width={24} height={24} />
                     </Button>
@@ -63,7 +63,7 @@ export default function Header({ headerTitle, avatarImage }: headerProps) {
                         </Fade>
                     ) : null}
                     <NextLink href="/profile">
-                        <Link>
+                        <Link pl={2}>
                             <Avatar src={avatarImage} size="sm" />
                         </Link>
                     </NextLink>
