@@ -6,6 +6,7 @@ export const theme = extendTheme({
   },
   colors: {
     black: "#0E0E0E",
+    blackTransparent: "rgba(14, 14, 14, .7)",
     white: "#ffffff",
     grey: "#DCDCDC",
     lightgrey: "#F0F0F0",

@@ -18,6 +18,7 @@ export default function Home({ workouts, meals }: any) {
               key={workout.id}
               cardLink={`/workout/${workout.id}`}
               cardName={workout.workoutTitle}
+              cardCategory="Strength"
               cardDescription={workout.workoutDescription}
               cardImage={workout.workoutImage.url}
               cardTime={workout.workoutTime}
@@ -31,15 +32,18 @@ export default function Home({ workouts, meals }: any) {
           <Text>No meal yet</Text>
         ) : meals.map((meal: any) => {
           return (
-            <FitCard
-              key={meal.id}
-              cardLink={`/meal/${meal.id}`}
-              cardName={meal.mealTitle}
-              cardDescription={meal.mealDescription}
-              cardImage={meal.mealImage.url}
-              cardTime={meal.time}
-              cardDificulty={meal.difficulty}
-            />
+            <>
+              <FitCard
+                key={meal.id}
+                cardLink={`/meal/${meal.id}`}
+                cardName={meal.mealTitle}
+                cardDescription={meal.mealDescription}
+                cardCategory="Baking"
+                cardImage={meal.mealImage.url}
+                cardTime={meal.time}
+                cardDificulty={meal.difficulty}
+              />
+            </>
           )
         })}
       </CardSlider>

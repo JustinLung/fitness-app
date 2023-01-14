@@ -9,34 +9,35 @@ interface ExerciseProps {
     cardImage: string;
     cardTime: number;
     cardLink: string;
+    cardCategory: string;
     cardDificulty: string;
 }
 
 export default function FitCard({
     cardName,
-    cardDescription,
+    cardCategory,
     cardImage,
     cardTime,
     cardLink,
     cardDificulty
 }: ExerciseProps) {
     return (
-        <NextLink href={cardLink}>
-            <Link textDecor="none" _hover={{ textDecor: "none" }}>
-                <Card as="article" scrollSnapAlign="center" w={{ base: "90vw" }} bg={theme.colors.white} color={theme.colors.black}>
-                    <Box position="relative">
-                        <Image src={cardImage} alt={cardName} borderRadius=".2rem" w="100%" h="15rem" objectFit="cover" />
-                        <Text position="absolute" color={theme.colors.white} borderRadius=".2rem" px={4} py={2} bg={theme.colors.black} bottom={4} left={4}>{cardDificulty}</Text>
-                    </Box>
-                    <CardBody>
-                        <Flex alignItems="center" justifyContent="space-between">
-                            <Heading as="h3" fontSize="lg" maxW="15rem">{cardName}</Heading>
-                            <Text display="flex" alignItems="center" gap={2}>{cardTime} Min</Text>
+        <>
+            <NextLink href={cardLink}>
+                <Link textDecor="none" _hover={{ textDecor: "none" }}>
+                    <Box as="article" w="90vw" h="13rem" scrollSnapAlign="center" position="relative">
+                        <Box w="100%" h="100%" bg={theme.colors.blackTransparent} position="absolute" zIndex={2} borderRadius=".5rem"/>
+                        <Image src={cardImage} alt={cardName} w="100%" h="100%" objectFit="cover" borderRadius=".5rem" />
+                        <Flex as="section" position="absolute" flexDir="column" top={0} p={4} zIndex={3} color={theme.colors.white} h="100%" w="100%">
+                            <Text fontSize="lg" color={theme.colors.orange}>{cardDificulty}</Text>
+                            <Heading as="h3" fontSize="2xl" maxW="18rem">{cardName}</Heading>
+                            <Text mt="auto">{cardCategory}</Text>
+                            <Text>{cardTime} minutes</Text>
+                            <Link position="absolute" bottom={4} right={4} bg={theme.colors.black} px={4} py={1} borderRadius="1rem">View</Link>
                         </Flex>
-                        <Text whiteSpace="nowrap" overflow="hidden" textOverflow="ellipsis" maxW="20rem">{cardDescription}</Text>
-                    </CardBody>
-                </Card>
-            </Link>
-        </NextLink>
+                    </Box>
+                </Link>
+            </NextLink>
+        </>
     );
 }
