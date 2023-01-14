@@ -12,8 +12,8 @@ export default function Navigation() {
       bottom={0}
       left={0}
       right={0}
-      p="0.7em 0"
-      pb="2em"
+      py={3}
+      pb="calc(1em + env(safe-area-inset-bottom))"
       bg={theme.colors.white}
       w="100%"
     >
