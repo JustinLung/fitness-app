@@ -7,7 +7,7 @@ import { mealIdQuery } from "../../lib/queries";
 export default function MealId({ meal }: any) {
     return (
         <>
-            <DetailHeader />
+            <DetailHeader href="/meals" />
             <DetailHero heroImage={meal.mealImage.url} />
             <Flex as="section" flexDir="column" maxW="90vw" mx="auto">
                 <Heading size="lg" pt={4}>{meal.mealTitle}</Heading>

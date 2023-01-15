@@ -19,7 +19,7 @@ import { theme } from '../../styles/theme'
 export default function WorkoutId({ workout }: any) {
     return (
         <>
-            <DetailHeader />
+            <DetailHeader href="/workouts" />
             <DetailHero heroImage={workout.workoutImage.url} />
             <Box w="90vw" mx="auto" py={5}>
                 <Heading size="lg">{workout.workoutTitle}</Heading>
