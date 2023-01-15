@@ -27,7 +27,7 @@ export default function FitCard({
                 <Box as={motion.article} initial="hidden" w="90vw" h="13rem" scrollSnapAlign="center" position="relative">
                     <Box w="100%" h="100%" bg={theme.colors.blackTransparent} position="absolute" zIndex={2} borderRadius=".5rem" />
                     <Image src={cardImage} alt={cardName} w="100%" h="100%" objectFit="cover" borderRadius=".5rem" />
-                    <Flex position="absolute" flexDir="column" top={0} p={4} zIndex={3} color={theme.colors.white} h="100%" w="100%">
+                    <Flex as="section" position="absolute" flexDir="column" top={0} p={4} zIndex={3} color={theme.colors.white} h="100%" w="100%">
                         <Text fontSize="md" color={theme.colors.orange}>{cardDificulty}</Text>
                         <Heading as="h3" fontSize="2xl" maxW="18rem">{cardName}</Heading>
                         <Text mt="auto" fontSize=".8rem">{cardCategory}</Text>
