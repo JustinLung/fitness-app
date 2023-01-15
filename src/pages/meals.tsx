@@ -14,7 +14,7 @@ export default function Meals({ meals }: any) {
             <Search>
                 <Input type="search" placeholder="Search for a meal..." _placeholder={{ color: theme.colors.black }} bg={theme.colors.lightgrey} focusBorderColor={theme.colors.orange} onChange={event => { setSearchTerm(event.target.value) }} />
             </Search>
-            <FitSection fitSectionTitle="Get Your Pump In" fitSectionDescription="All workouts ready to use.">
+            <FitSection fitSectionTitle="Make some delicious meal" fitSectionDescription="Make some delicious meals for the best gains.">
                 {meals.length === 0 ? (
                     <Text>No workouts yet</Text>
                 ) : meals.filter((meals: any) => {
