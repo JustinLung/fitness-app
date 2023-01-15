@@ -25,7 +25,7 @@ export default function MealId({ meal }: any) {
                 }}>
                     {meal.ingredient.map((ingredient: any) => {
                         return (
-                            <ListItem key={ingredient.id} listStyleType="disc" ml="1rem">{ingredient.ingredient}</ListItem>
+                            <ListItem key={ingredient.id} py={1} listStyleType="disc" ml="1rem">{ingredient.ingredient}</ListItem>
                         )
                     })}
                 </List>
@@ -34,7 +34,7 @@ export default function MealId({ meal }: any) {
                 }}>
                     {meal.methodOfPreperations.map((method: any) => {
                         return (
-                            <ListItem key={method.id} listStyleType="disc" ml="1rem">{method.method}</ListItem>
+                            <ListItem key={method.id} py={1} listStyleType="disc" ml="1rem">{method.method}</ListItem>
                         )
                     })}
                 </List>

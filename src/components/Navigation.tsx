@@ -3,13 +3,14 @@ import { useRouter } from "next/router";
 import HomeIcon from "./icons/HomeIcon";
 import AppleIcon from "./icons/AppleIcon";
 import BarbellIcon from "./icons/BarbellIcon";
-import UserIcon from "./icons/UserIcon";
+import ChartIcon from "./icons/ChartIcon";
 import NavItem from "./NavItem";
 import { theme } from "../styles/theme";
 
 export default function Navigation() {
   const router = useRouter();
   return (
+    <>
       <Box
         as="nav"
         pos="fixed"
@@ -53,15 +54,16 @@ export default function Navigation() {
             </NavItem>
           </ListItem>
           <ListItem opacity={
-            router.pathname == "/profile"
+            router.pathname == "/progress"
               ? "1"
               : ".5"
           }>
-            <NavItem href="/profile" navTitle="Profile">
-              <UserIcon width={24} height={24} />
+            <NavItem href="/progress" navTitle="Progress">
+              <ChartIcon width={24} height={24} />
             </NavItem>
           </ListItem>
         </List>
       </Box>
+    </>
   );
 }
