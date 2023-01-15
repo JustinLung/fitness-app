@@ -1,20 +1,31 @@
 import { GraphQLClient } from "graphql-request"
-import { Text } from "@chakra-ui/react"
+import { Text, Input } from "@chakra-ui/react"
 import Search from "../components/Search"
-import CardAlt from "../components/CardAlt"
+import Card from "../components/Card"
 import FitSection from "../components/FitSection"
 import { workoutsQuery, mealsQuery } from "../lib/queries"
+import { useState } from "react"
+import { theme } from '../styles/theme'
 
 export default function Workouts({ workouts }: any) {
+    const [searchTerm, setSearchTerm] = useState('')
     return (
         <>
-            <Search searchPlaceholder="Search for a workout" />
+            <Search>
+                <Input type="search" placeholder="Search for a workout..." _placeholder={{ color: theme.colors.black }} bg={theme.colors.lightgrey} onChange={event => { setSearchTerm(event.target.value) }} />
+            </Search>
             <FitSection fitSectionTitle="Get Your Pump In" fitSectionDescription="All workouts ready to use.">
                 {workouts.length === 0 ? (
                     <Text>No workouts yet</Text>
-                ) : workouts.map((workout: any) => {
+                ) : workouts.filter((workouts: any) => {
+                    if (searchTerm === "") {
+                        return workouts
+                    } else if (workouts.workoutTitle.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        return workouts
+                    }
+                }).map((workout: any) => {
                     return (
-                        <CardAlt
+                        <Card
                             cardCategory={workout.workoutCategory}
                             cardDificulty={workout.difficulty}
                             key={workout.id}
@@ -27,6 +38,7 @@ export default function Workouts({ workouts }: any) {
                     )
                 })}
             </FitSection>
+
         </>
     )
 }
@@ -47,3 +59,4 @@ export async function getServerSideProps() {
         }
     }
 }
+

@@ -1,4 +1,5 @@
 import { Flex, Heading, Text } from "@chakra-ui/react";
+import { motion } from 'framer-motion'
 import { ReactNode } from "react";
 
 interface fitSectionProps {

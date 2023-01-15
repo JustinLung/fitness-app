@@ -1,20 +1,31 @@
 import { GraphQLClient } from "graphql-request"
-import { Text } from "@chakra-ui/react"
-import CardAlt from "../components/CardAlt"
+import { Text, Input } from "@chakra-ui/react"
+import Search from "../components/Search"
+import Card from "../components/Card"
 import FitSection from "../components/FitSection"
 import { mealsQuery } from "../lib/queries"
-import Search from "../components/Search"
+import { theme } from '../styles/theme'
+import { useState } from "react"
 
 export default function Meals({ meals }: any) {
+    const [searchTerm, setSearchTerm] = useState('')
     return (
         <>
-            <Search searchPlaceholder="Search for a delicious meal" />
-            <FitSection fitSectionTitle="Delicious Meals" fitSectionDescription="Nice meals for you to try out!">
+            <Search >
+                <Input type="search" placeholder="Search for a meal..." _placeholder={{ color: theme.colors.black }} bg={theme.colors.lightgrey} onChange={event => { setSearchTerm(event.target.value) }} />
+            </Search>
+            <FitSection fitSectionTitle="Get Your Pump In" fitSectionDescription="All workouts ready to use.">
                 {meals.length === 0 ? (
-                    <Text>No meal yet</Text>
-                ) : meals.map((meal: any) => {
+                    <Text>No workouts yet</Text>
+                ) : meals.filter((meals: any) => {
+                    if (searchTerm == "") {
+                        return meals
+                    } else if (meals.mealTitle.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        return meals
+                    }
+                }).map((meal: any) => {
                     return (
-                        <CardAlt
+                        <Card
                             cardCategory={meal.mealCategory}
                             cardDificulty={meal.difficulty}
                             key={meal.id}

@@ -1,5 +1,5 @@
-import { Card, CardBody, Text, Image, Heading, Link, Flex, Box } from "@chakra-ui/react";
-// import { TimeIcon } from "@chakra-ui/icons";
+import {Text, Image, Heading, Link, Flex, Box } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import NextLink from 'next/link'
 import { theme } from '../styles/theme'
 
@@ -23,7 +23,7 @@ export default function FitCard({
 }: ExerciseProps) {
     return (
         <Link as={NextLink} href={cardLink} textDecor="none" _hover={{ textDecor: "none" }}>
-            <Box as="article" w="90vw" h="13rem" scrollSnapAlign="center" position="relative">
+            <Box as={motion.article} initial="hidden" w="90vw" h="13rem" scrollSnapAlign="center" position="relative">
                 <Box w="100%" h="100%" bg={theme.colors.blackTransparent} position="absolute" zIndex={2} borderRadius=".5rem" />
                 <Image src={cardImage} alt={cardName} w="100%" h="100%" objectFit="cover" borderRadius=".5rem" />
                 <Flex position="absolute" flexDir="column" top={0} p={4} zIndex={3} color={theme.colors.white} h="100%" w="100%">
