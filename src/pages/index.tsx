@@ -1,6 +1,6 @@
 import { GraphQLClient } from "graphql-request";
 import { Text } from "@chakra-ui/react";
-import { workoutsQuery, mealsQuery } from "../lib/queries";
+import { workoutsLatestQuery, mealsLatestQuery } from "../lib/queries";
 import FitCard from "../components/Card";
 import CardSlider from "../components/CardSlider";
 import Header from "../components/Header";
@@ -57,8 +57,8 @@ export async function getServerSideProps() {
     process.env.HYGRAPH_ENDPOINT
   )
 
-  const { workouts } = await hygraph.request(workoutsQuery);
-  const { meals } = await hygraph.request(mealsQuery)
+  const { workouts } = await hygraph.request(workoutsLatestQuery);
+  const { meals } = await hygraph.request(mealsLatestQuery)
 
   return {
     props: {

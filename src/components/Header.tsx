@@ -39,7 +39,7 @@ export default function Header({ headerTitle, avatarImage }: headerProps) {
                 {menuOpen ? (
                     <Fade in={menuOpen}>
                         <List
-                            backgroundColor={theme.colors.black}
+                            backgroundColor={theme.colors.orange}
                             color={theme.colors.white}
                             zIndex={99}
                             borderRadius=".2rem"
