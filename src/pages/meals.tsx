@@ -11,8 +11,8 @@ export default function Meals({ meals }: any) {
     const [searchTerm, setSearchTerm] = useState('')
     return (
         <>
-            <Search >
-                <Input type="search" placeholder="Search for a meal..." _placeholder={{ color: theme.colors.black }} bg={theme.colors.lightgrey} onChange={event => { setSearchTerm(event.target.value) }} />
+            <Search>
+                <Input type="search" placeholder="Search for a meal..." _placeholder={{ color: theme.colors.black }} bg={theme.colors.lightgrey} focusBorderColor={theme.colors.orange} onChange={event => { setSearchTerm(event.target.value) }} />
             </Search>
             <FitSection fitSectionTitle="Get Your Pump In" fitSectionDescription="All workouts ready to use.">
                 {meals.length === 0 ? (
