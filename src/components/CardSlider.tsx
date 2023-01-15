@@ -20,7 +20,6 @@ export default function CardSlider({
         as="header"
         justifyContent="space-between"
         alignItems="center"
-        py={3}
       >
         <Heading as="h2" size="md">
           {cardSectionHeading}
@@ -30,7 +29,7 @@ export default function CardSlider({
           color={theme.colors.white}
           border={`1px solid ${theme.colors.black}`}
           borderRadius="2rem"
-          px="1.5rem"
+          px="1rem"
           py=".2rem"
           as={NextLink}
           href={cardSectionLink}
@@ -63,6 +62,7 @@ export default function CardSlider({
           },
         }}
         py={2}
+        mb={5}
       >
         {children}
       </Flex>

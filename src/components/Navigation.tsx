@@ -10,7 +10,6 @@ import { theme } from "../styles/theme";
 export default function Navigation() {
   const router = useRouter();
   return (
-    <>
       <Box
         as="nav"
         pos="fixed"
@@ -64,6 +63,5 @@ export default function Navigation() {
           </ListItem>
         </List>
       </Box>
-    </>
   );
 }
