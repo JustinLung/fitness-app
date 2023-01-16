@@ -4,6 +4,7 @@ import HomeIcon from "./icons/HomeIcon";
 import AppleIcon from "./icons/AppleIcon";
 import BarbellIcon from "./icons/BarbellIcon";
 import ChartIcon from "./icons/ChartIcon";
+import AddIcon from "./icons/AddIcon";
 import NavItem from "./NavItem";
 import { theme } from "../styles/theme";
 
@@ -25,6 +26,7 @@ export default function Navigation() {
         borderTop="2px solid"
         borderColor={theme.colors.lightgrey}
       >
+        {/* Home */}
         <List display="flex" justifyContent="space-around" mx="auto">
           <ListItem opacity={
             router.pathname == "/"
@@ -35,6 +37,7 @@ export default function Navigation() {
               <HomeIcon width={24} height={24} />
             </NavItem>
           </ListItem >
+          {/* Workouts */}
           <ListItem opacity={
             router.pathname == "/workouts"
               ? "1"
@@ -43,7 +46,18 @@ export default function Navigation() {
             <NavItem href="/workouts" navTitle="Workouts">
               <BarbellIcon width={24} height={24} />
             </NavItem>
-          </ListItem>
+          </ListItem >
+          {/* Create */}
+          <ListItem opacity={
+            router.pathname == "/create"
+              ? "1"
+              : ".5"
+          }>
+            <NavItem href="/create" navTitle="Create">
+              <AddIcon width={24} height={24} />
+            </NavItem>
+          </ListItem >
+          {/* meals */}
           <ListItem opacity={
             router.pathname == "/meals"
               ? "1"
@@ -52,7 +66,8 @@ export default function Navigation() {
             <NavItem href="/meals" navTitle="Meals">
               <AppleIcon width={24} height={24} />
             </NavItem>
-          </ListItem>
+          </ListItem >
+          {/* Progress */}
           <ListItem opacity={
             router.pathname == "/progress"
               ? "1"
@@ -61,7 +76,7 @@ export default function Navigation() {
             <NavItem href="/progress" navTitle="Progress">
               <ChartIcon width={24} height={24} />
             </NavItem>
-          </ListItem>
+          </ListItem >
         </List>
       </Box>
     </>

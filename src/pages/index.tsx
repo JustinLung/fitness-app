@@ -8,7 +8,7 @@ import Header from "../components/Header";
 export default function Home({ workouts, meals }: any) {
   return (
     <>
-      <Header headerTitle="Welcome, Justin!" avatarImage="/assets/images/placeholder.png" />
+      <Header headerTitle="Welcome to Fitcheck" avatarImage="/assets/images/placeholder.png" />
       <CardSlider cardSectionHeading="Featured Workouts" cardSectionLink="/workouts">
         {workouts.length === 0 ? (
           <Text>No workouts yet</Text>
