@@ -3,10 +3,11 @@ import {
     Heading,
     Avatar,
     Link,
-    Button,
+    Box
 } from "@chakra-ui/react";
 import NextLink from 'next/link'
 import BarbellIcon from "./icons/BarbellIcon";
+import { theme } from '../styles/theme'
 
 interface headerProps {
     headerTitle: string;
@@ -18,10 +19,13 @@ export default function Header({ headerTitle, avatarImage }: headerProps) {
         <Flex
             as="header"
             alignItems="center"
+            py={3}
+            mb={5}
+            gap={2}
+            borderBottom="2px solid"
+            borderColor={theme.colors.lightgrey}
             maxW="90vw"
             mx="auto"
-            py={5}
-            gap={2}
         >
             <BarbellIcon width={24} height={24} />
             <Heading as="h1" size="md" fontWeight={500}>
