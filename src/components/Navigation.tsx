@@ -18,7 +18,7 @@ export default function Navigation() {
       left={0}
       right={0}
       zIndex={4}
-      py={3}
+      pt={3}
       pb="calc(1rem + env(safe-area-inset-bottom))"
       bg={theme.colors.white}
       w="100%"
