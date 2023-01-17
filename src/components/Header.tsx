@@ -39,7 +39,7 @@ export default function Header({ headerTitle, avatarImage }: headerProps) {
             </Heading>
             <Flex alignItems="center" ml="auto">
                 <Link as={NextLink} href="/profile">
-                    <Avatar src={avatarImage} size="sm" />
+                    <Avatar src={avatarImage} size="sm" loading="lazy" />
                 </Link>
             </Flex>
         </Flex>

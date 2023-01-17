@@ -7,7 +7,7 @@ interface DetailHeroProps {
 export default function DetailHero({ heroImage }: DetailHeroProps) {
     return (
         <Box h="20rem" w="100%">
-            <Image src={heroImage} w="100%" h="100%" objectFit="cover" alt="Hero Image" />
+            <Image src={heroImage} loading="lazy" w="100%" h="100%" objectFit="cover" alt="Hero Image" />
         </Box>
     )
 }

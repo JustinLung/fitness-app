@@ -6,7 +6,6 @@ import {
     Input,
     Flex,
     Link,
-    Image
 } from "@chakra-ui/react";
 import NextLink from 'next/link';
 import { theme } from "../styles/theme";
@@ -41,7 +40,7 @@ export default function Login() {
                         value="Login"
                     />
                 </InputGroup>
-                <Link textAlign="center">Forgot Password?</Link>
+                <Link textAlign="center" as={NextLink}>Forgot Password?</Link>
                 <Text textAlign="center">Don&apos;t have an account? <Link>Register</Link></Text>
             </Stack>
         </Flex >
