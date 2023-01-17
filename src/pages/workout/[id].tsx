@@ -10,7 +10,6 @@ import {
     Box,
     Text,
 } from '@chakra-ui/react'
-import DetailHeader from "../../components/detailComponents/DetailHeader";
 import DetailHero from '../../components/detailComponents/DetailHero';
 import { GraphQLClient } from "graphql-request";
 import { workoutIdQuery } from "../../lib/queries";
@@ -19,7 +18,6 @@ import { theme } from '../../styles/theme'
 export default function WorkoutId({ workout }: any) {
     return (
         <>
-            <DetailHeader href="/workouts" />
             <DetailHero heroImage={workout.workoutImage.url} />
             <Box w="90vw" mx="auto" py={5}>
                 <Heading size="lg">{workout.workoutTitle}</Heading>

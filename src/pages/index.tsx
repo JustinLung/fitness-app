@@ -8,8 +8,7 @@ import Header from "../components/Header";
 export default function Home({ workouts, meals }: any) {
   return (
     <>
-      <Header headerTitle="Welcome" avatarImage="/assets/images/placeholder.png" />
-      <CardSlider cardSectionHeading="Featured Workouts" cardSectionLink="/workouts">
+      <CardSlider cardSectionHeading="Featured Workouts" cardSectionLink="/workouts" cardSectionSlider={5}>
         {workouts.length === 0 ? (
           <Text>No workouts yet</Text>
         ) : workouts.map((workout: any) => {
@@ -28,7 +27,7 @@ export default function Home({ workouts, meals }: any) {
           )
         })}
       </CardSlider>
-      <CardSlider cardSectionHeading="Featured Meals" cardSectionLink="/meals">
+      <CardSlider cardSectionHeading="Featured Meals" cardSectionLink="/meals" cardSectionSlider={0}>
         {meals.length === 0 ? (
           <Text>No meal yet</Text>
         ) : meals.map((meal: any) => {

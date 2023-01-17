@@ -15,7 +15,7 @@ export default function FitSection({
 }: fitSectionProps) {
     return (
         <Flex as="section" maxW="90vw" mx="auto" flexDir="column">
-            <Heading size="lg">{fitSectionTitle}</Heading>
+            <Heading as="h2" size="lg">{fitSectionTitle}</Heading>
             <Text mb={2}>{fitSectionDescription}</Text>
             <Flex flexDir="column" gap={2}>
                 {children}

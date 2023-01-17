@@ -7,12 +7,14 @@ interface CardSectionProps {
   children: ReactNode;
   cardSectionHeading: string;
   cardSectionLink: string;
+  cardSectionSlider: number
 }
 
 export default function CardSlider({
   children,
   cardSectionHeading,
-  cardSectionLink
+  cardSectionLink,
+  cardSectionSlider
 }: CardSectionProps) {
   return (
     <Box as="section" maxW="90vw" mx="auto" mb={3}>
@@ -20,6 +22,7 @@ export default function CardSlider({
         as="header"
         justifyContent="space-between"
         alignItems="center"
+        mt={cardSectionSlider}
       >
         <Heading as="h2" size="md">
           {cardSectionHeading}
