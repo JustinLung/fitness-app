@@ -1,3 +1,5 @@
+"use client"
+
 import { Text, Image, Heading, Link, Flex, Box } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import NextLink from 'next/link'

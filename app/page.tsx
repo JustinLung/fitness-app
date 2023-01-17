@@ -1,14 +1,36 @@
+"use client"
+
 import { GraphQLClient } from "graphql-request";
 import { Text } from "@chakra-ui/react";
-import { workoutsLatestQuery, mealsLatestQuery } from "../lib/queries";
-import FitCard from "../components/Card";
-import CardSlider from "../components/CardSlider";
-import Header from "../components/Header";
+import { workoutsLatestQuery, mealsLatestQuery } from "../src/lib/queries";
+import FitCard from "../src/components/Card";
+import CardSlider from "../src/components/CardSlider";
+import { useEffect } from "react";
 
-export default function Home({ workouts, meals }: any) {
+async function getData() {
+  const hygraph = new GraphQLClient(
+    // @ts-ignore
+    process.env.HYGRAPH_ENDPOINT
+  )
+
+  const { workouts } = await hygraph.request(workoutsLatestQuery);
+  const { meals } = await hygraph.request(mealsLatestQuery)
+
+  return {
+    props: {
+      workouts,
+      meals
+    }
+  }
+}
+
+export default async function Home({ workouts, meals }: any) {
+  useEffect(() => {
+    console.log(workouts, meals)
+  })
   return (
     <>
-      <CardSlider cardSectionHeading="Featured Workouts" cardSectionLink="/workouts" cardSectionSlider={5}>
+      {/* <CardSlider cardSectionHeading="Featured Workouts" cardSectionLink="/workouts" cardSectionSlider={5}>
         {workouts.length === 0 ? (
           <Text>No workouts yet</Text>
         ) : workouts.map((workout: any) => {
@@ -47,24 +69,25 @@ export default function Home({ workouts, meals }: any) {
             </>
           )
         })}
-      </CardSlider>
+      </CardSlider> */}
+      <h1>hello</h1>
     </>
   );
 }
 
-export async function getServerSideProps() {
-  const hygraph = new GraphQLClient(
-    // @ts-ignore
-    process.env.HYGRAPH_ENDPOINT
-  )
+// export async function getServerSideProps() {
+//   const hygraph = new GraphQLClient(
+//     // @ts-ignore
+//     process.env.HYGRAPH_ENDPOINT
+//   )
 
-  const { workouts } = await hygraph.request(workoutsLatestQuery);
-  const { meals } = await hygraph.request(mealsLatestQuery)
+//   const { workouts } = await hygraph.request(workoutsLatestQuery);
+//   const { meals } = await hygraph.request(mealsLatestQuery)
 
-  return {
-    props: {
-      workouts,
-      meals
-    }
-  }
-}
+//   return {
+//     props: {
+//       workouts,
+//       meals
+//     }
+//   }
+// }

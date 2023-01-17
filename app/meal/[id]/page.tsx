@@ -1,7 +1,7 @@
 import { Heading, Flex, Text, List, ListItem } from "@chakra-ui/react"
-import DetailHero from "../../components/detailComponents/DetailHero";
+import DetailHero from "../../../src/components/detailComponents/DetailHero";
 import { GraphQLClient } from "graphql-request";
-import { mealIdQuery } from "../../lib/queries";
+import { mealIdQuery } from "../../../src/lib/queries";
 
 export default function MealId({ meal }: any) {
     return (
@@ -41,16 +41,16 @@ export default function MealId({ meal }: any) {
     )
 }
 
-export async function getServerSideProps({ query }: any) {
-    const hygraph = new GraphQLClient(
-        // @ts-ignore
-        process.env.HYGRAPH_ENDPOINT
-    )
-    const { meal } = await hygraph.request(mealIdQuery, { id: query.id });
+// export async function getServerSideProps({ query }: any) {
+//     const hygraph = new GraphQLClient(
+//         // @ts-ignore
+//         process.env.HYGRAPH_ENDPOINT
+//     )
+//     const { meal } = await hygraph.request(mealIdQuery, { id: query.id });
 
-    return {
-        props: {
-            meal
-        }
-    }
-}
+//     return {
+//         props: {
+//             meal
+//         }
+//     }
+// }

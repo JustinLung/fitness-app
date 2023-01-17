@@ -10,10 +10,10 @@ import {
     Box,
     Text,
 } from '@chakra-ui/react'
-import DetailHero from '../../components/detailComponents/DetailHero';
+import DetailHero from '../../../src/components/detailComponents/DetailHero';
 import { GraphQLClient } from "graphql-request";
-import { workoutIdQuery } from "../../lib/queries";
-import { theme } from '../../styles/theme'
+import { workoutIdQuery } from "../../../src/lib/queries";
+import { theme } from '../../../src/styles/theme'
 
 export default function WorkoutId({ workout }: any) {
     return (
@@ -49,16 +49,16 @@ export default function WorkoutId({ workout }: any) {
     )
 }
 
-export async function getServerSideProps({ query }: any) {
-    const hygraph = new GraphQLClient(
-        // @ts-ignore
-        process.env.HYGRAPH_ENDPOINT
-    )
-    const { workout } = await hygraph.request(workoutIdQuery, { id: query.id });
+// export async function getServerSideProps({ query }: any) {
+//     const hygraph = new GraphQLClient(
+//         // @ts-ignore
+//         process.env.HYGRAPH_ENDPOINT
+//     )
+//     const { workout } = await hygraph.request(workoutIdQuery, { id: query.id });
 
-    return {
-        props: {
-            workout
-        }
-    }
-}
+//     return {
+//         props: {
+//             workout
+//         }
+//     }
+// }

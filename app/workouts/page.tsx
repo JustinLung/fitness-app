@@ -1,11 +1,13 @@
+'use client';
+
 import { GraphQLClient } from "graphql-request"
 import { Text, Input } from "@chakra-ui/react"
-import Search from "../components/Search"
-import Card from "../components/Card"
-import FitSection from "../components/FitSection"
-import { workoutsQuery, mealsQuery } from "../lib/queries"
+import Search from "../../src/components/Search"
+import Card from "../../src/components/Card"
+import FitSection from "../../src/components/FitSection"
+import { workoutsQuery, mealsQuery } from "../../src/lib/queries"
 import { useState } from "react"
-import { theme } from '../styles/theme'
+import { theme } from '../../src/styles/theme'
 
 export default function Workouts({ workouts }: any) {
     const [searchTerm, setSearchTerm] = useState('')
@@ -44,20 +46,20 @@ export default function Workouts({ workouts }: any) {
     )
 }
 
-export async function getServerSideProps() {
-    const hygraph = new GraphQLClient(
-        // @ts-ignore
-        process.env.HYGRAPH_ENDPOINT
-    )
+// export async function getServerSideProps() {
+//     const hygraph = new GraphQLClient(
+//         // @ts-ignore
+//         process.env.HYGRAPH_ENDPOINT
+//     )
 
-    const { workouts } = await hygraph.request(workoutsQuery);
-    const { meals } = await hygraph.request(mealsQuery)
+//     const { workouts } = await hygraph.request(workoutsQuery);
+//     const { meals } = await hygraph.request(mealsQuery)
 
-    return {
-        props: {
-            workouts,
-            meals
-        }
-    }
-}
+//     return {
+//         props: {
+//             workouts,
+//             meals
+//         }
+//     }
+// }
 
