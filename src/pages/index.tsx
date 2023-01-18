@@ -3,7 +3,6 @@ import { Text } from "@chakra-ui/react";
 import { workoutsLatestQuery, mealsLatestQuery } from "../lib/queries";
 import FitCard from "../components/Card";
 import CardSlider from "../components/CardSlider";
-import Header from "../components/Header";
 
 export default function Home({ workouts, meals }: any) {
   return (
@@ -34,8 +33,8 @@ export default function Home({ workouts, meals }: any) {
           return (
             <>
               <FitCard
-                cardWidth="80vw"
                 key={meal.id}
+                cardWidth="80vw"
                 cardLink={`/meal/${meal.id}`}
                 cardName={meal.mealTitle}
                 cardDescription={meal.mealDescription}

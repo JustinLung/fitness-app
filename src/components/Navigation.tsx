@@ -7,7 +7,6 @@ import ChartIcon from "./icons/ChartIcon";
 import AddIcon from "./icons/AddIcon";
 import NavItem from "./NavItem";
 
-
 export default function Navigation() {
   const router = useRouter();
   return (
@@ -19,7 +18,7 @@ export default function Navigation() {
       right={0}
       zIndex={4}
       py={3}
-      pb="calc(1rem + env(safe-area-inset-bottom))"
+      paddingBottom="calc(1rem + env(safe-area-inset-bottom))"
       bg={"white"}
       w="100%"
       borderTop="2px solid"
