@@ -22,7 +22,7 @@ export default function WorkoutId({ workout }: any) {
                 <Heading size="lg">{workout.workoutTitle}</Heading>
                 <Text>{workout.workoutDescription}</Text>
             </Box>
-            <TableContainer maxW="90vw" mx="auto">
+            <TableContainer maxW="90vw" mx="auto" >
                 <Table variant='simple' size='sm'>
                     <Thead>
                         <Tr>
@@ -43,7 +43,7 @@ export default function WorkoutId({ workout }: any) {
                         })}
                     </Tbody>
                 </Table>
-            </TableContainer>
+            </TableContainer >
         </>
     )
 }

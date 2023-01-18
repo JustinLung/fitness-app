@@ -12,10 +12,10 @@ import { useRouter } from "next/router";
 interface headerProps {
     headerTitle: string;
     avatarImage: string;
-    user: string;
+    avatarName: string;
 }
 
-export default function Header({ headerTitle, avatarImage, user }: headerProps) {
+export default function Header({ headerTitle, avatarImage, avatarName }: headerProps) {
     const router = useRouter();
     return (
         <Flex
@@ -39,9 +39,9 @@ export default function Header({ headerTitle, avatarImage, user }: headerProps) 
             </Heading>
             <Flex alignItems="center" ml="auto">
                 <Link as={NextLink} href="/profile">
-                    <Avatar src={avatarImage} size="sm" loading="lazy" />
+                    <Avatar src={avatarImage} name={avatarName} size="sm" loading="lazy" />
                 </Link>
             </Flex>
-        </Flex>
+        </Flex >
     );
 }

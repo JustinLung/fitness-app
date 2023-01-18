@@ -29,7 +29,8 @@ export default function Workouts({ workouts }: any) {
                             cardCategory={workout.workoutCategory}
                             cardDificulty={workout.difficulty}
                             key={workout.id}
-                            cardLink={`/workout/${workout.id}`}
+                            cardLink={`/workout/${workout.id}`
+                            }
                             cardName={workout.workoutTitle}
                             cardDescription={workout.workoutDescription}
                             cardImage={workout.workoutImage.url}

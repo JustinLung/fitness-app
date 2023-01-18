@@ -29,7 +29,8 @@ export default function Meals({ meals }: any) {
                             cardCategory={meal.mealCategory}
                             cardDificulty={meal.difficulty}
                             key={meal.id}
-                            cardLink={`/meal/${meal.id}`}
+                            cardLink={`/meal/${meal.id}`
+                            }
                             cardName={meal.mealTitle}
                             cardDescription={meal.mealDescription}
                             cardImage={meal.mealImage.url}
