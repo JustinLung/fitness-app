@@ -13,7 +13,6 @@ import {
 import DetailHero from '../../components/detailComponents/DetailHero';
 import { GraphQLClient } from "graphql-request";
 import { workoutIdQuery } from "../../lib/queries";
-import { theme } from '../../styles/theme'
 
 export default function WorkoutId({ workout }: any) {
     return (
@@ -27,9 +26,9 @@ export default function WorkoutId({ workout }: any) {
                 <Table variant='simple' size='sm'>
                     <Thead>
                         <Tr>
-                            <Th color={theme.colors.orange} px={0}>Exercises</Th>
-                            <Th color={theme.colors.orange} px={0} isNumeric>Sets</Th>
-                            <Th color={theme.colors.orange} px={0} isNumeric>Reps</Th>
+                            <Th color={"orange"} px={0}>Exercises</Th>
+                            <Th color={"orange"} px={0} isNumeric>Sets</Th>
+                            <Th color={"orange"} px={0} isNumeric>Reps</Th>
                         </Tr>
                     </Thead>
                     <Tbody>

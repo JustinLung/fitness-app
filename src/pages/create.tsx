@@ -1,5 +1,4 @@
 import { Heading, Text, Box } from "@chakra-ui/react"
-import { theme } from '../styles/theme'
 
 export default function Profile() {
     return (

@@ -6,16 +6,16 @@ import {
 } from "@chakra-ui/react";
 import NextLink from 'next/link'
 import BarbellIcon from "./icons/BarbellIcon";
-import { theme } from '../styles/theme'
 import BackIcon from "./icons/BackIcon";
 import { useRouter } from "next/router";
 
 interface headerProps {
     headerTitle: string;
     avatarImage: string;
+    user: string;
 }
 
-export default function Header({ headerTitle, avatarImage }: headerProps) {
+export default function Header({ headerTitle, avatarImage, user }: headerProps) {
     const router = useRouter();
     return (
         <Flex
@@ -24,7 +24,7 @@ export default function Header({ headerTitle, avatarImage }: headerProps) {
             py={3}
             gap={2}
             borderBottom="2px solid"
-            borderColor={theme.colors.lightgrey}
+            borderColor={"lightgrey"}
             maxW="90vw"
             mx="auto"
         >

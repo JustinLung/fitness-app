@@ -10,7 +10,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
     return (
         <>
-            <Header headerTitle="Fitcheck" avatarImage="/assets/images/placeholder.png" />
+            <Header headerTitle="Fitcheck" avatarImage="/assets/images/placeholder.png" user="User Profile Image" />
             <Box as="main" mb="5rem">
                 {children}
             </Box>

@@ -4,7 +4,6 @@ import Search from "../components/Search"
 import Card from "../components/Card"
 import FitSection from "../components/FitSection"
 import { mealsQuery } from "../lib/queries"
-import { theme } from '../styles/theme'
 import { useState } from "react"
 
 export default function Meals({ meals }: any) {
@@ -12,7 +11,7 @@ export default function Meals({ meals }: any) {
     return (
         <>
             <Search>
-                <Input type="search" placeholder="Search for a meal..." _placeholder={{ color: theme.colors.black }} bg={theme.colors.lightgrey} focusBorderColor={theme.colors.orange} onChange={event => { setSearchTerm(event.target.value) }} />
+                <Input type="search" placeholder="Search for a meal..." _placeholder={{ color: "black" }} bg={"lightgrey"} focusBorderColor={"orange"} onChange={event => { setSearchTerm(event.target.value) }} />
             </Search>
             <FitSection fitSectionTitle="Make some delicious meal" fitSectionDescription="Make some delicious meals for the best gains.">
                 {meals.length === 0 ? (

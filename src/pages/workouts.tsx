@@ -5,14 +5,13 @@ import Card from "../components/Card"
 import FitSection from "../components/FitSection"
 import { workoutsQuery, mealsQuery } from "../lib/queries"
 import { useState } from "react"
-import { theme } from '../styles/theme'
 
 export default function Workouts({ workouts }: any) {
     const [searchTerm, setSearchTerm] = useState('')
     return (
         <>
             <Search>
-                <Input type="search" placeholder="Search for a workout..." _placeholder={{ color: theme.colors.black }} bg={theme.colors.lightgrey} focusBorderColor={theme.colors.orange} onChange={event => { setSearchTerm(event.target.value) }} />
+                <Input type="search" placeholder="Search for a workout..." _placeholder={{ color: "black" }} bg={"lightgrey"} focusBorderColor={"orange"} onChange={event => { setSearchTerm(event.target.value) }} />
             </Search>
             <FitSection fitSectionTitle="Get Your Pump In" fitSectionDescription="All workouts ready to use.">
                 {workouts.length === 0 ? (

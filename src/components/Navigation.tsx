@@ -6,7 +6,7 @@ import BarbellIcon from "./icons/BarbellIcon";
 import ChartIcon from "./icons/ChartIcon";
 import AddIcon from "./icons/AddIcon";
 import NavItem from "./NavItem";
-import { theme } from "../styles/theme";
+
 
 export default function Navigation() {
   const router = useRouter();
@@ -20,10 +20,10 @@ export default function Navigation() {
       zIndex={4}
       py={3}
       pb="calc(1rem + env(safe-area-inset-bottom))"
-      bg={theme.colors.white}
+      bg={"white"}
       w="100%"
       borderTop="2px solid"
-      borderColor={theme.colors.lightgrey}
+      borderColor={"lightgrey"}
     >
       {/* Home */}
       <List display="flex" justifyContent="space-around" mx="auto">
