@@ -20,7 +20,8 @@ export default function Navigation() {
       py={3}
       paddingBottom="calc(1rem + env(safe-area-inset-bottom))"
       bg={"white"}
-      w="100%"
+      w={{ base: "100%", md: "50vw" }}
+      mx="auto"
       borderTop="2px solid"
       borderColor={"lightgrey"}
     >

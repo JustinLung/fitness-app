@@ -7,7 +7,7 @@ export default function MealId({ meal }: any) {
     return (
         <>
             <DetailHero heroImage={meal.mealImage.url} />
-            <Flex as="section" flexDir="column" maxW="90vw" mx="auto">
+            <Flex as="section" flexDir="column" maxW={{ base: "90vw", md: "50vw" }} mx="auto">
                 <Heading size="lg" pt={4}>{meal.mealTitle}</Heading>
                 <Text py={4}>{meal.mealDescription}</Text>
                 <List display="flex" flexWrap="wrap" gap=".2rem">

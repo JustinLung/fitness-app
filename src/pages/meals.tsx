@@ -25,7 +25,7 @@ export default function Meals({ meals }: any) {
                 }).map((meal: any) => {
                     return (
                         <Card
-                            cardWidth="90vw"
+                            cardWidth={{ base: "90vw", md: "50vw" }}
                             cardCategory={meal.mealCategory}
                             cardDificulty={meal.difficulty}
                             key={meal.id}

@@ -9,7 +9,7 @@ interface SearchInterface {
 export default function Search({ children }: SearchInterface) {
     return (
         <>
-            <InputGroup maxW="90vw" mx="auto" my={5}>
+            <InputGroup maxW={{ base: "90vw", md: "50vw" }} mx="auto" my={5}>
                 <InputLeftElement h="full" ><SearchIcon width={24} height={25} /></InputLeftElement>
                 {children}
             </InputGroup>

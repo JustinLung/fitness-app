@@ -16,7 +16,7 @@ export default function CardSlider({
   cardSectionSlider
 }: CardSectionProps) {
   return (
-    <Box as="section" maxW="90vw" mx="auto" mb={3} >
+    <Box as="section" maxW={{ base: "90vw", md: "50vw" }} mx="auto" mb={3} >
       <Flex
         as="header"
         justifyContent="space-between"

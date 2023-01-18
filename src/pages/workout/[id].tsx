@@ -18,11 +18,11 @@ export default function WorkoutId({ workout }: any) {
     return (
         <>
             <DetailHero heroImage={workout.workoutImage.url} />
-            <Box w="90vw" mx="auto" py={5}>
+            <Box w={{ base: "90vw", md: "50vw" }} mx="auto" py={5}>
                 <Heading size="lg">{workout.workoutTitle}</Heading>
                 <Text>{workout.workoutDescription}</Text>
             </Box>
-            <TableContainer maxW="90vw" mx="auto" >
+            <TableContainer maxW={{ base: "90vw", md: "50vw" }} mx="auto" >
                 <Table variant='simple' size='sm'>
                     <Thead>
                         <Tr>

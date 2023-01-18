@@ -25,7 +25,7 @@ export default function Header({ headerTitle, avatarImage, avatarName }: headerP
             gap={2}
             borderBottom="2px solid"
             borderColor={"lightgrey"}
-            maxW="90vw"
+            maxW={{ base: "90vw", md: "50vw" }}
             mx="auto"
         >
             <Link as={NextLink} href="/" mr="auto" opacity={router.pathname == "/"

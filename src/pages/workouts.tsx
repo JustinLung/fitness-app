@@ -25,7 +25,7 @@ export default function Workouts({ workouts }: any) {
                 }).map((workout: any) => {
                     return (
                         <Card
-                            cardWidth="90vw"
+                            cardWidth={{ base: "90vw", md: "50vw" }}
                             cardCategory={workout.workoutCategory}
                             cardDificulty={workout.difficulty}
                             key={workout.id}
