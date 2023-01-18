@@ -10,22 +10,23 @@ interface NavItemProps {
 
 export default function NavItem({ href, navTitle, children }: NavItemProps) {
     return (
-            <Link
-                _hover={{ textDecor: "none" }}
-                _after={{
-                    content: `'${navTitle}'`,
-                    fontSize: ".8rem"
-                }}
-                display="flex"
-                flexDir="column"
-                alignItems="center"
-                justifyContent="center"
-                as={NextLink}
-                href={href}
-            >
-                <Box as="figure">
-                    {children}
-                </Box>
-            </Link>
+        <Link
+            _hover={{ textDecor: "none" }}
+            _after={{
+                content: `'${navTitle}'`,
+                fontSize: ".8rem"
+            }}
+            display="flex"
+            flexDir="column"
+            alignItems="center"
+            justifyContent="center"
+            as={NextLink}
+            href={href}
+            aria-label={navTitle}
+        >
+            <Box as="figure">
+                {children}
+            </Box>
+        </Link>
     )
 }

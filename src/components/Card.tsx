@@ -1,7 +1,7 @@
 import { Text, Image, Heading, Link, Flex, Box } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 
-const NextLink = dynamic(import('next/link'), {ssr: false})
+const NextLink = dynamic(import('next/link'), { ssr: false })
 
 interface ExerciseProps {
     cardName: string;
