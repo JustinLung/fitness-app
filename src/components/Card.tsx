@@ -11,7 +11,7 @@ interface ExerciseProps {
     cardLink: string;
     cardCategory: string;
     cardDificulty: string;
-    cardWidth: string;
+    cardWidth: any;
 }
 
 export default function FitCard({
@@ -26,7 +26,7 @@ export default function FitCard({
     return (
         <>
             <Link as={NextLink} href={cardLink} textDecor="none" _hover={{ textDecor: "none" }}>
-                <Box as="article" w={cardWidth} h={{ base: "15rem", md: "30rem" }} scrollSnapAlign="center" position="relative">
+                <Box as="article" w={cardWidth} h={{ base: "15rem", md: "25rem" }} scrollSnapAlign="center" position="relative">
                     <Box w="100%" h="100%" bg={'blackTransparent'} position="absolute" zIndex={2} borderRadius=".5rem" />
                     <Image loading="lazy" src={cardImage} alt={cardName} w="100%" h="100%" objectFit="cover" borderRadius=".5rem" />
                     <Flex as="section" position="absolute" flexDir="column" top={0} p={4} zIndex={3} color={'white'} h="100%" w="100%">

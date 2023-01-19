@@ -14,7 +14,10 @@ export default function Home({ workouts, meals }: any) {
           return (
             <FitCard
               key={workout.id}
-              cardWidth="80vw"
+              cardWidth={{
+                base: "80vw",
+                md: "40vw"
+              }}
               cardLink={`/workout/${workout.id}`}
               cardName={workout.workoutTitle}
               cardCategory={workout.workoutCategory}
@@ -34,7 +37,10 @@ export default function Home({ workouts, meals }: any) {
             <>
               <FitCard
                 key={meal.id}
-                cardWidth="80vw"
+                cardWidth={{
+                  base: "80vw",
+                  md: "40vw"
+                }}
                 cardLink={`/meal/${meal.id}`}
                 cardName={meal.mealTitle}
                 cardDescription={meal.mealDescription}
