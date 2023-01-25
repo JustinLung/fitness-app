@@ -5,11 +5,12 @@ import Card from "../components/Card"
 import FitSection from "../components/FitSection"
 import { workoutsQuery, mealsQuery } from "../lib/queries"
 import { useState } from "react"
+import PageTransition from "../components/PageTransition"
 
 export default function Workouts({ workouts }: any) {
     const [searchTerm, setSearchTerm] = useState('')
     return (
-        <>
+        <PageTransition>
             <Search>
                 <Input type="search" placeholder="Search for a workout..." _placeholder={{ color: "black" }} bg={"lightgrey"} focusBorderColor={"orange"} onChange={event => { setSearchTerm(event.target.value) }} />
             </Search>
@@ -21,6 +22,10 @@ export default function Workouts({ workouts }: any) {
                         return workouts
                     } else if (workouts.workoutTitle.toLowerCase().includes(searchTerm.toLowerCase())) {
                         return workouts
+                    } else if (searchTerm.length === 0) {
+                        return (
+                            <Text>No Workouts Found.</Text>
+                        )
                     }
                 }).map((workout: any) => {
                     return (
@@ -40,7 +45,7 @@ export default function Workouts({ workouts }: any) {
                 })}
             </FitSection>
 
-        </>
+        </PageTransition>
     )
 }
 

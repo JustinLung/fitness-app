@@ -13,10 +13,11 @@ import {
 import DetailHero from '../../components/detailComponents/DetailHero';
 import { GraphQLClient } from "graphql-request";
 import { workoutIdQuery } from "../../lib/queries";
+import PageTransition from '../../components/PageTransition';
 
 export default function WorkoutId({ workout }: any) {
     return (
-        <>
+        <PageTransition>
             <DetailHero heroImage={workout.workoutImage.url} />
             <Box w={{ base: "90vw", md: "50vw" }} mx="auto" py={5}>
                 <Heading size="lg">{workout.workoutTitle}</Heading>
@@ -44,7 +45,7 @@ export default function WorkoutId({ workout }: any) {
                     </Tbody>
                 </Table>
             </TableContainer >
-        </>
+        </PageTransition>
     )
 }
 

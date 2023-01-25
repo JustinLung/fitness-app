@@ -5,11 +5,12 @@ import Card from "../components/Card"
 import FitSection from "../components/FitSection"
 import { mealsQuery } from "../lib/queries"
 import { useState } from "react"
+import PageTransition from "../components/PageTransition"
 
 export default function Meals({ meals }: any) {
     const [searchTerm, setSearchTerm] = useState('')
     return (
-        <>
+        <PageTransition>
             <Search>
                 <Input type="search" placeholder="Search for a meal..." _placeholder={{ color: "black" }} bg={"lightgrey"} focusBorderColor={"orange"} onChange={event => { setSearchTerm(event.target.value) }} />
             </Search>
@@ -39,7 +40,7 @@ export default function Meals({ meals }: any) {
                     )
                 })}
             </FitSection>
-        </>
+        </PageTransition>
     )
 }
 

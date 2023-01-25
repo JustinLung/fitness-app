@@ -1,11 +1,12 @@
 import { Heading, Flex, Text, List, ListItem } from "@chakra-ui/react"
+import PageTransition from '../../components/PageTransition';
 import DetailHero from "../../components/detailComponents/DetailHero";
 import { GraphQLClient } from "graphql-request";
 import { mealIdQuery } from "../../lib/queries";
 
 export default function MealId({ meal }: any) {
     return (
-        <>
+        <PageTransition>
             <DetailHero heroImage={meal.mealImage.url} />
             <Flex as="section" flexDir="column" maxW={{ base: "90vw", md: "50vw" }} mx="auto">
                 <Heading size="lg" pt={4}>{meal.mealTitle}</Heading>
@@ -37,7 +38,7 @@ export default function MealId({ meal }: any) {
                     })}
                 </List>
             </Flex>
-        </>
+        </PageTransition>
     )
 }
 

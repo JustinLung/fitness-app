@@ -1,4 +1,5 @@
 import { GraphQLClient } from "graphql-request";
+import PageTransition from "../components/PageTransition";
 import { Text } from "@chakra-ui/react";
 import { workoutsLatestQuery, mealsLatestQuery } from "../lib/queries";
 import FitCard from "../components/Card";
@@ -6,7 +7,7 @@ import CardSlider from "../components/CardSlider";
 
 export default function Home({ workouts, meals }: any) {
   return (
-    <>
+    <PageTransition>
       <CardSlider cardSectionHeading="Featured Workouts" cardSectionLink="/workouts" cardSectionSlider={5}>
         {workouts.length === 0 ? (
           <Text>No workouts yet</Text>
@@ -53,7 +54,7 @@ export default function Home({ workouts, meals }: any) {
           )
         })}
       </CardSlider>
-    </>
+    </PageTransition>
   );
 }
 
